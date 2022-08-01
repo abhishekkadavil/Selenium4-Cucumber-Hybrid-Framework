@@ -1,0 +1,163 @@
+2022-04-06 11:28:48.979 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - com.utils.LoggerUtil:startTestCase 16==>  
+
+************** Execution Started : asdasd**************
+
+2022-04-06 11:28:54.202 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - com.utils.LoggerUtil:endTestCase 20==>  
+
+************** Execution End : asdasd**************
+
+2022-04-06 11:31:15.451 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - com.utils.LoggerUtil:startTestCase 16==>  
+
+************** Execution Started : asdasd**************
+
+2022-04-06 11:31:19.297 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - com.utils.LoggerUtil:endTestCase 20==>  
+
+************** Execution End : asdasd**************
+
+2022-04-06 11:31:34.242 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - com.utils.LoggerUtil:startTestCase 16==>  
+
+************** Execution Started : asdasd**************
+
+2022-04-06 11:31:38.462 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - com.utils.LoggerUtil:endTestCase 20==>  
+
+************** Execution End : asdasd**************
+
+2022-04-06 11:33:31.146 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - 
+
+************** Execution Started : asdasd**************
+
+2022-04-06 11:33:35.038 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - 
+
+************** Execution End : asdasd**************
+
+2022-04-06 11:34:08.713 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - 
+
+************** Execution Started : asdasd**************
+
+2022-04-06 11:34:12.491 [INFO ] [main] [com.utils.LoggerUtil.info(LoggerUtil.java:96)] - 
+
+************** Execution End : asdasd**************
+
+2022-04-06 11:35:55.859 [INFO ] [main] [com.runners.TestRunner.beforeClass(TestRunner.java:36)] - asdasd
+2022-04-06 11:35:59.678 [INFO ] [main] [com.runners.TestRunner.afterClass(TestRunner.java:52)] - asdasd
+2022-04-06 11:36:32.319 [INFO ] [main] [com.runners.TestRunner.beforeClass(TestRunner.java:36)] - asdasd
+2022-04-06 11:36:32.324 [INFO ] [main] [com.runners.TestRunner.beforeClass(TestRunner.java:40)] - asdasd
+2022-04-06 11:36:32.488 [INFO ] [main] [com.runners.TestRunner.beforeClass(TestRunner.java:45)] - asdasd
+2022-04-06 11:36:35.891 [INFO ] [main] [com.runners.TestRunner.afterClass(TestRunner.java:54)] - asdasd
+2022-04-06 12:22:23.856 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.utils.LoggerUtil:startTestCase 14==>  
+
+************** Execution Started : login with valid user**************
+
+2022-04-06 12:22:25.672 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.stepDef.CommonSteps:user_is_on_home_page_and_testdata_present_in 21==>  user is on home page and testdata present in
+2022-04-06 12:22:25.711 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.stepDef.LoginPageSteps:loginUsingTheCredentials 32==>  login using the credentials
+2022-04-06 12:22:26.209 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.stepDef.LoginPageSteps:userShouldBeAbleToLoginSuccessfully 40==>  user should be able to login successfully
+2022-04-06 12:22:26.288 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.utils.LoggerUtil:endTestCase 18==>  
+
+************** Execution End : login with valid user**************
+
+2022-04-06 12:23:43.456 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.utils.LoggerUtil:startTestCase 14==>  
+
+************** Execution Started : login with valid user**************
+
+2022-04-06 12:23:44.941 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.stepDef.CommonSteps:user_is_on_home_page_and_testdata_present_in 21==>  user is on home page and testdata present in
+2022-04-06 12:23:45.001 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.stepDef.LoginPageSteps:loginUsingTheCredentials 32==>  login using the credentials
+2022-04-06 12:23:45.536 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.stepDef.LoginPageSteps:userShouldBeAbleToLoginSuccessfully 40==>  user should be able to login successfully
+2022-04-06 12:23:45.605 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:94)] - com.utils.LoggerUtil:endTestCase 18==>  
+
+************** Execution End : login with valid user**************
+
+2022-04-06 12:43:26.611 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:startTestCase 15==>  
+
+************** Execution Started : login with valid user**************
+
+2022-04-06 12:43:28.246 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.CommonSteps:user_is_on_home_page_and_testdata_present_in 21==>  user is on home page and testdata present in
+2022-04-06 12:43:28.317 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:loginUsingTheCredentials 32==>  login using the credentials
+2022-04-06 12:43:28.874 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:userShouldBeAbleToLoginSuccessfully 40==>  user should be able to login successfully
+2022-04-06 12:43:28.912 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:endTestCase 19==>  
+
+************** Execution End : login with valid user**************
+
+2022-04-06 12:43:45.995 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:startTestCase 15==>  
+
+************** Execution Started : login with valid user**************
+
+2022-04-06 12:43:45.998 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:startTestCase 15==>  
+
+************** Execution Started : login with invalid user**************
+
+2022-04-06 12:43:48.058 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.CommonSteps:user_is_on_home_page_and_testdata_present_in 21==>  user is on home page and testdata present in
+2022-04-06 12:43:48.109 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.CommonSteps:user_is_on_home_page_and_testdata_present_in 21==>  user is on home page and testdata present in
+2022-04-06 12:43:48.118 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:loginUsingTheCredentials 32==>  login using the credentials
+2022-04-06 12:43:48.118 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:loginUsingTheCredentials 32==>  login using the credentials
+2022-04-06 12:43:48.720 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:endTestCase 19==>  
+
+************** Execution End : login with invalid user**************
+
+2022-04-06 12:43:48.892 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:userShouldBeAbleToLoginSuccessfully 40==>  user should be able to login successfully
+2022-04-06 12:43:48.933 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:endTestCase 19==>  
+
+************** Execution End : login with valid user**************
+
+2022-04-06 12:55:27.582 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:startTestCase 15==>  
+
+************** Execution Started : login with valid user**************
+
+2022-04-06 12:55:27.585 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:startTestCase 15==>  
+
+************** Execution Started : login with invalid user**************
+
+2022-04-06 12:55:29.567 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.CommonSteps:user_is_on_home_page_and_testdata_present_in 21==>  user is on home page and testdata present in
+2022-04-06 12:55:29.572 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.CommonSteps:user_is_on_home_page_and_testdata_present_in 21==>  user is on home page and testdata present in
+2022-04-06 12:55:29.617 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:loginUsingTheCredentials 32==>  login using the credentials
+2022-04-06 12:55:29.617 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:loginUsingTheCredentials 32==>  login using the credentials
+2022-04-06 12:55:30.145 [INFO ] [TestNG-PoolService-1] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:endTestCase 19==>  
+
+************** Execution End : login with invalid user**************
+
+2022-04-06 12:55:30.300 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.stepDef.LoginPageSteps:userShouldBeAbleToLoginSuccessfully 40==>  user should be able to login successfully
+2022-04-06 12:55:30.337 [INFO ] [TestNG-PoolService-0] [com.utils.LoggerUtil.info(LoggerUtil.java:79)] - com.utils.LoggerUtil:endTestCase 19==>  
+
+************** Execution End : login with valid user**************
+
+2022-04-06 17:22:43.222 [INFO ] [TestNG-PoolService-1] [com.stepDef.Hooks.beforeScenario(Hooks.java:33)] - 
+************** Execution Started : login with invalid user**************
+
+2022-04-06 17:22:43.222 [INFO ] [TestNG-PoolService-0] [com.stepDef.Hooks.beforeScenario(Hooks.java:33)] - 
+************** Execution Started : login with valid user**************
+
+2022-04-06 17:22:46.140 [INFO ] [TestNG-PoolService-1] [com.stepDef.Hooks.afterScenario(Hooks.java:50)] - 
+************** Execution Ended : login with invalid user**************
+
+2022-04-06 17:22:46.399 [INFO ] [TestNG-PoolService-0] [com.stepDef.Hooks.afterScenario(Hooks.java:50)] - 
+************** Execution Ended : login with valid user**************
+
+2022-04-06 18:09:40.780 [INFO ] [TestNG-PoolService-0] [com.stepDef.Hooks.beforeScenario(Hooks.java:34)] - 
+************** Execution Started : login with valid user**************
+
+2022-04-06 18:09:40.780 [INFO ] [TestNG-PoolService-1] [com.stepDef.Hooks.beforeScenario(Hooks.java:34)] - 
+************** Execution Started : login with invalid user**************
+
+2022-04-06 18:09:43.179 [INFO ] [TestNG-PoolService-1] [com.stepDef.Hooks.afterScenario(Hooks.java:52)] - 
+************** Execution Ended : login with invalid user**************
+
+2022-04-06 18:09:43.412 [INFO ] [TestNG-PoolService-0] [com.stepDef.Hooks.afterScenario(Hooks.java:52)] - 
+************** Execution Ended : login with valid user**************
+
+2022-04-06 18:28:30.402 [INFO ] [TestNG-PoolService-1] [com.stepDef.Hooks.afterScenario(Hooks.java:57)] - 
+************** Execution Ended : login with invalid user**************
+
+2022-04-06 18:28:30.594 [INFO ] [TestNG-PoolService-0] [com.stepDef.Hooks.afterScenario(Hooks.java:57)] - 
+************** Execution Ended : login with valid user**************
+
+2022-04-06 18:29:06.774 [INFO ] [TestNG-PoolService-0] [com.stepDef.Hooks.beforeScenario(Hooks.java:39)] - 
+************** Execution Started : login with valid user**************
+
+2022-04-06 18:29:06.774 [INFO ] [TestNG-PoolService-1] [com.stepDef.Hooks.beforeScenario(Hooks.java:39)] - 
+************** Execution Started : login with invalid user**************
+
+2022-04-06 18:29:09.118 [INFO ] [TestNG-PoolService-1] [com.stepDef.Hooks.afterScenario(Hooks.java:57)] - 
+************** Execution Ended : login with invalid user**************
+
+2022-04-06 18:29:09.313 [INFO ] [TestNG-PoolService-0] [com.stepDef.Hooks.afterScenario(Hooks.java:57)] - 
+************** Execution Ended : login with valid user**************
+

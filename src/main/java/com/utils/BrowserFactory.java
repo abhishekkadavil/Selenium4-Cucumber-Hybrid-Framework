@@ -1,5 +1,6 @@
 package com.utils;
 
+import io.cucumber.guice.ScenarioScoped;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,11 +9,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+@ScenarioScoped
 public class BrowserFactory {
 	
 	public WebDriver getBrowser(String browser)
 	{
-		WebDriver driver=null;
+		WebDriver driver = null;
 		
 		if(browser.equalsIgnoreCase("Chrome"))
 		{

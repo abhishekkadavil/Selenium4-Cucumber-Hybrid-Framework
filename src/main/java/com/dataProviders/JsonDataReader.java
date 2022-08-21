@@ -2,7 +2,6 @@ package com.dataProviders;
 
 import com.google.gson.Gson;
 import com.testDataModels.TestDataModel;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

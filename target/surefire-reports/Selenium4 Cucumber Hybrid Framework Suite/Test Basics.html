@@ -1,0 +1,242 @@
+<html>
+<head>
+<title>TestNG:  Test Basics</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test Basics</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/5/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Aug 21 12:40:02 IST 2022</td>
+</tr>
+<tr><td>Total time:</td><td>26 seconds (26652 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.tMwr5Q}, goog:chromeOptions: {debuggerAddress: localhost:32889}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32889/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9eb9266a0d0805fa40e5e192321d705a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1510339107", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1510339107'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.tMwr5Q}, goog:chromeOptions: {debuggerAddress: localhost:32889}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32889/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9eb9266a0d0805fa40e5e192321d705a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div></td>
+<td>11</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.9VbllE}, goog:chromeOptions: {debuggerAddress: localhost:43783}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:43783/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 78a8f6f2d488a920e3f949da592e17ef
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1944670526", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1944670526'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.9VbllE}, goog:chromeOptions: {debuggerAddress: localhost:43783}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:43783/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 78a8f6f2d488a920e3f949da592e17ef
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div></td>
+<td>11</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.2aYnYL}, goog:chromeOptions: {debuggerAddress: localhost:33483}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33483/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 607682be9b28490d3a1129a04d4d9233
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace133563902", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace133563902'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.2aYnYL}, goog:chromeOptions: {debuggerAddress: localhost:33483}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33483/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 607682be9b28490d3a1129a04d4d9233
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div></td>
+<td>14</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.PWMoYL}, goog:chromeOptions: {debuggerAddress: localhost:39305}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39305/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 009e092f55e6b674f702924643280ea7
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace856561780", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace856561780'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.PWMoYL}, goog:chromeOptions: {debuggerAddress: localhost:39305}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39305/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 009e092f55e6b674f702924643280ea7
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div></td>
+<td>14</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.VaYnYL}, goog:chromeOptions: {debuggerAddress: localhost:38103}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:38103/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 62791acc78b1092a92a812d6dfe2bddc
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace907104525", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace907104525'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;QB-KRT-10370&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;11.0.16&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.VaYnYL}, goog:chromeOptions: {debuggerAddress: localhost:38103}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:38103/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 62791acc78b1092a92a812d6dfe2bddc
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.stepDef.InteractionHelper.getText(InteractionHelper.java:62)
+	at com.stepDef.LoginPageSteps.userShouldBeAbleToLoginSuccessfully(LoginPageSteps.java:34)
+	at ✽.user should be able to login successfully(file:///home/qbuser/Kadavil/IdeaWorkSpace/Selenium4CucumberHybridFramework/Features/MultipleExecution.feature:11)
+</pre></div></td>
+<td>14</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td></td>
+<td>1</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td></td>
+<td>1</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "login different users", "Optional[Login]"</td>
+<td></td>
+<td>4</td>
+<td>com.runners.TestRunner@1d119efb</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,26 +1,43 @@
 package com.utils;
 
-import io.cucumber.java.Scenario;
+import com.google.inject.Inject;
+import io.cucumber.guice.ScenarioScoped;
+import lombok.Data;
 import lombok.Getter;
-import lombok.Setter;
-import java.util.Map;
+import org.aeonbits.owner.ConfigFactory;
+import org.openqa.selenium.WebDriver;
+import java.util.HashMap;
 
+@Data
+@ScenarioScoped
 public class TestContext {
 
-    @Setter
+//    Since this class is marked as @ScenarioScoped each scenario will have their own copy of the TestContext class
+//    the object state will not be leaked to other objects
+
+    HashMap <String,String> scenarioContext = new HashMap<>();
+    @Inject
+    BrowserFactory browserFactory;
+
+    //code related to config reader
     @Getter
-    Scenario scenario;
+    ConfigUtil configUtil = ConfigFactory.create(ConfigUtil.class);
 
-    public static ThreadLocal<Map<String,String>> scenarioContext = new ThreadLocal<Map<String,String>>();
+    //@Data annotation will auto generate getter so that we can use getDriver in other classes, as for initialisation
+    // that is done from invokeDriver() -> beforeScenario
+    WebDriver driver;
 
-    public Map<String,String> getScenarioContext() {
-        return scenarioContext.get();
+    public void invokeDriver(){
+        String browser = (System.getProperty("browser")==null) ? configUtil.getBrowser() : System.getProperty("browser");
+        this.driver = browserFactory.getBrowser(browser);
+        this.driver.manage().window().maximize();
     }
 
-    public void setScenarioContext(Map<String, String> scenarioContextMap) {
-        scenarioContext.set(scenarioContextMap);
+    public void navigateBrowser(String url){
+        this.driver.get(url);
     }
-
-
+    public void quitDriver(){
+        this.driver.quit();
+    }
 
 }

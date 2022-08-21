@@ -1,25 +1,32 @@
 package com.stepDef;
 
+import com.google.inject.Inject;
 import com.testDataModels.Item;
-import com.utils.DriverFactory;
+import com.utils.TestContext;
 import com.utils.TestDataFactory;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
 public class ItemPageSteps {
+
+	@Inject
+	InteractionHelper interactionHelper;
+	@Inject
+	TestContext testContext;
+
+	private By item_quantity_txtbx = By.xpath("//input[@aria-label='Enter a quantity']");
+	private By add_to_cart_btn = By.xpath("//button[@class='button-1 add-to-cart-button']");
 	
 	@When("add item to cart")
 	public void add_item_to_cart() {
 		
 		for (Item item : TestDataFactory.getInstance().getTestDataModel().getItems()) {
-			
-			DriverFactory.getDriverFactory().getWebDriver().navigate().to(item.getUrl());
-			DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//input[@aria-label='Enter a " +
-					"quantity']")).clear();
-			DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//input[@aria-label='Enter a " +
-					"quantity']")).sendKeys(item.getQuantity());
-			DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//button[@class='button-1 add-to-cart-button']")).click();
-			
+
+			//navigate to each item through url
+			testContext.getDriver().navigate().to(item.getUrl());
+
+			interactionHelper.typeElement(item_quantity_txtbx,item.getQuantity());
+			interactionHelper.clickElement(add_to_cart_btn);
 		} 
 
 	}

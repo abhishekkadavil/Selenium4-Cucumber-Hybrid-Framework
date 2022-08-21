@@ -1,0 +1,40 @@
+  {
+    "login_credentail": {
+      "username": "abhishek.kadavil05@gmail.com",
+      "password": "3@Akmaster"
+    },
+    "items": [
+      {
+        "url": "http://localhost/htc-one-m8-android-l-50-lollipop",
+        "size": "S",
+        "quantity": "5"
+      }
+    ],
+    "billing_address": {
+      "firstName": "Abhishek",
+      "lastName": "K R",
+      "address": "Palakkal",
+      "city": "New York",
+      "state": "New York",
+      "zip": "10001",
+      "country": "United States",
+      "homePh": "09946266914",
+      "mobilePh": "09946266914",
+      "addressTitle": "HomeAddress"
+    },
+    "shipping_address": {
+      "firstName": "Abhishek",
+      "lastName": "K R",
+      "address": "Palakkal",
+      "city": "New York",
+      "state": "New York",
+      "zip": "10001",
+      "country": "United States",
+      "homePh": "09946266914",
+      "mobilePh": "09946266914",
+      "addressTitle": "HomeAddress"
+    },
+    "payment": {
+      "pmtType": "Check"
+    }
+}

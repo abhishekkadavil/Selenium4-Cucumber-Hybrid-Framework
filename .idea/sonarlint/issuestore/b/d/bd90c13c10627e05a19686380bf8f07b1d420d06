@@ -1,12 +1,0 @@
-
-[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¦¹º°
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÃöŸæ
-o
-java:S1104"TMake fileName a static final constant or non-public and provide accessors if needed.(°É…­úÿÿÿÿ
-—
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ß¹‘¢
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‡£„Ø
-C	java:S108#")Either remove or fill this block of code.(¿ßÔ–ýÿÿÿÿ
-E
-java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ

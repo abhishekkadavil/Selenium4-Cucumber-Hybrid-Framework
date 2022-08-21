@@ -1,37 +1,43 @@
 package com.stepDef;
 
-import com.utils.DriverFactory;
+import com.google.inject.Inject;
 import com.utils.TestContext;
 import com.utils.TestDataFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+
 public class LoginPageSteps {
-	
+
+	@Inject
+	InteractionHelper interactionHelper;
+	@Inject
 	TestContext testContext;
-	
-	public void LoginPageSteps(TestContext testContext) 
-	{
-		this.testContext = testContext;
-	}
+
+	private By username_txtbx = By.xpath("//input[@id='Email']");
+	private By password_txtbx = By.xpath("//input[@id='Password']");
+	private By login_btn = By.xpath("//button[text()='Log in']");
+	private By logout_btn = By.xpath("//a[@class='ico-logout']");
+	private By login_error_msg = By.xpath("//div[@class='message-error validation-summary-errors']");
 
 	@When("login using the credentials")
 	public void loginUsingTheCredentials() {
 
-		DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//input[@id='Email']")).sendKeys(TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getUsername());
-		DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//input[@id='Password']")).sendKeys(TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getPassword());
-		DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//button[text()='Log in']")).click();
+		interactionHelper.typeElement(username_txtbx,TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getUsername());
+		interactionHelper.typeElement(password_txtbx,TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getPassword());
+		interactionHelper.clickElement(login_btn);
 	}
 
 	@Then("user should be able to login successfully")
 	public void userShouldBeAbleToLoginSuccessfully() {
-		Assert.assertEquals(DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//a[@class='ico-logout']")).getText(),"Log out");
+		Assert.assertEquals(interactionHelper.getText(logout_btn),"Log out");
 	}
 
 	@Then("invalid user error should appear")
 	public void invalidUserErrorShouldAppear() {
-		Assert.assertEquals(DriverFactory.getDriverFactory().getWebDriver().findElement(By.xpath("//div[@class='message-error validation-summary-errors']")).getText(),"Login was unsuccessful. Please correct the errors and try again.\n" +
+		Assert.assertEquals(interactionHelper.getText(login_error_msg),"Login was unsuccessful. Please correct the " +
+				"errors and try again.\n" +
 				"No customer account found");
 	}
 }

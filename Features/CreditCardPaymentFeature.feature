@@ -4,7 +4,7 @@
 Feature: Credit card payment
   I want to test the credit crad payment feature
 
-  @Scenario1
+  @CC_Scenario1
   Scenario: Credit card payment with one item
     Given user is on home page and testdata present in "CreditCardPaymentFeature/Scenario01.json"
     When login using the credentials
@@ -19,8 +19,8 @@ Feature: Credit card payment
     Then order should be placed successfully
     #And order can be view in order history
 #
-  @Scenario2
-  Scenario: exception ocuured while place order
+  @CC_Scenario2
+  Scenario: exception occurred while place order
     Given user is on home page and testdata present in "CreditCardPaymentFeature/Scenario02.json"
     When login using the credentials
     And add item to cart

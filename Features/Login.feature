@@ -15,3 +15,15 @@ Feature: Login
   Given user is on home page and testdata present in "Login/Scenario02.json"
   When login using the credentials
   Then invalid user error should appear
+
+ @Login_Scenario3
+ Scenario: failed test case
+  Given user is on home page and testdata present in "Login/Scenario03.json"
+  When login using the credentials
+  Then "invalid user error1" message should appear
+
+ @Login_Scenario4
+ Scenario: login exception test case
+  Given user is on home page and testdata present in "Login/Scenario04.json"
+  When login using the credentials
+  Then user should be able to login successfully

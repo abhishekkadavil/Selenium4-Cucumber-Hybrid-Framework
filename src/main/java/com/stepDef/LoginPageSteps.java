@@ -40,4 +40,9 @@ public class LoginPageSteps {
 				"errors and try again.\n" +
 				"No customer account found");
 	}
+
+	@Then("{string} message should appear")
+	public void invalidUserErrorShouldAppear(String message) {
+		Assert.assertEquals(interactionHelper.getText(login_error_msg),message);
+	}
 }

@@ -26,4 +26,7 @@ public interface ConfigUtil extends Config {
     @Key("ImplicitlyWait")
     String getImplicitlyWait();
 
+    @Key("selenium.grid.url")
+    String getSeleniumGridUrl();
+
 }

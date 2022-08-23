@@ -12,7 +12,16 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 
 		<selenium.version>4.1.1</selenium.version>
+		<webdriver.manager.version>5.1.0</webdriver.manager.version>
 		<io.cucumber.version>7.2.3</io.cucumber.version>
+		<cucumber.testng.version>7.2.3</cucumber.testng.version>
+		<google.guice.version>5.1.0</google.guice.version>
+		<cucumber.guice.version>7.6.0</cucumber.guice.version>
+		<extentreports.version>5.0.6</extentreports.version>
+		<lombok.version>1.18.22</lombok.version>
+		<owner.java8.version>1.0.12</owner.java8.version>
+<!--		<log4j.core.version>2.18.0</log4j.core.version>-->
+<!--		<slf4j.version>2.0.0</slf4j.version>-->
 	</properties>
 
 	<dependencies>
@@ -25,7 +34,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.1.0</version>
+			<version>${webdriver.manager.version}</version>
 		</dependency>
 
 		<dependency>
@@ -38,7 +47,7 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>7.2.3</version>
+			<version>${cucumber.testng.version}</version>
 		</dependency>
 
 		<!-- for using tesng in the framework we need this jar too; also in the cucumber documentation ther mentioned
@@ -49,38 +58,52 @@
 <!--			<artifactId>testng</artifactId>-->
 <!--			<version>7.4.0</version>-->
 <!--		</dependency>-->
-
+		<!-- using for DI -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>5.1.0</version>
+			<version>${google.guice.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-guice</artifactId>
-			<version>7.6.0</version>
+			<version>${cucumber.guice.version}</version>
 		</dependency>
 
 		<!-- using for reporting -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>5.0.6</version>
+			<version>${extentreports.version}</version>
 		</dependency>
 
 		<!-- using for avoid setters ang getters -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.22</version>
+			<version>${lombok.version}</version>
 		</dependency>
 
 		<!-- using for configuration management in com.utils.ConfigUtil -->
 		<dependency>
 			<groupId>org.aeonbits.owner</groupId>
 			<artifactId>owner-java8</artifactId>
-			<version>1.0.12</version>
+			<version>${owner.java8.version}</version>
+		</dependency>
+
+		<!-- log4j -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.18.0</version>
+		</dependency>
+
+		<!-- SLF4J Bridge -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>2.11.2</version>
 		</dependency>
 	</dependencies>
 
@@ -89,11 +112,16 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
+				<version>3.0.0-M7</version>
 				<configuration>
-					<testSourceDirectory>${basedir}/src/main/java/</testSourceDirectory>
+					<testSourceDirectory>${basedir}/src/main/java/com/runners/TestRunner.java</testSourceDirectory>
 					<testClassesDirectory>${project.build.directory}/classes/</testClassesDirectory>
-					<!--Test ng execution configuration-->
+<!--					Execute tests w/o testng	-->
+<!--					<parallel>methods</parallel>-->
+<!--					<threadCount>10</threadCount>-->
+<!--					<perCoreThreadCount>false</perCoreThreadCount>-->
+
+<!--					Test ng execution configuration-->
 <!--					we are controlling the number of browser opening at a time through testng.xml-->
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>

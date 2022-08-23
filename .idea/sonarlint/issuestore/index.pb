@@ -57,8 +57,6 @@ f
 6src/main/java/com/stepDef/ShippingMethodPageSteps.java,7/f/7f4c8d100f59be364a118c65417a0efeb922afcd
 ]
 -src/main/java/com/runners/FailedTCRunner.java,8/c/8c7ab167d90cb831654142aacbcf591db84a752d
-c
-3src/main/java/com/dataProviders/JsonDataReader.java,b/d/bd90c13c10627e05a19686380bf8f07b1d420d06
 [
 +src/main/java/com/stepDef/RegisterUser.java,9/c/9cf1c32d6063c53a9b50203831f17df18c94a047
 L
@@ -67,8 +65,6 @@ L
 0src/main/java/test/runners/TestRunnerHelper.java,5/b/5bf8862b6d2378cd9b422bca2040f56493988c1a
 Z
 *src/main/java/test/runners/TestRunner.java,f/3/f38d9580ca76228b95901d1006c5aacd515a435a
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 e
 5src/main/java/com/testDataModels/Billing_address.java,c/9/c9944755de31b9c2a002a94ae66dadf46dc2e203
 Z
@@ -85,16 +81,12 @@ c
 ,src/main/java/com/utils/ReporterFactory.java,2/4/24ea6c472fb0b2de9173b6137e9a58ab87a1185d
 W
 'src/main/java/com/utils/ConfigUtil.java,2/b/2bfde168c1089c7c1cd487e37c157b6be4cdc724
-[
-+src/main/java/com/runners/RunnerHelper.java,d/6/d61ad282a2eaf617b441016ffde470658a0fde72
 B
 docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
 N
 TestData/Login/Scenario02.json,c/6/c6ff472e6eda329aecbd50c214d411ac3351d577
 N
 TestData/Login/Scenario03.json,a/3/a3ed676d1315b2ac5ce4bbffd1869b128fc9b40b
-X
-(src/main/java/com/utils/TestContext.java,c/c/cc3bd0e2a6257b4e0a40aa1dae018bd4175df053
 W
 'src/main/java/com/utils/WaitHelper.java,e/2/e27be115bdea8288c60a8b0f6886204db883baa3
 Y

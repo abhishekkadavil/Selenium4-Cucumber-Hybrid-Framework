@@ -19,7 +19,6 @@ public class CheckoutPageSteps {
 	
 	@When("checkout the cart")
 	public void checkout_the_cart() throws InterruptedException {
-
 		interactionHelper.clickElement(checkout_notification_bar);
 		interactionHelper.clickElement(shopping_cart_btn);
 		interactionHelper.clickElement(termsofservice_chkBx);

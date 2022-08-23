@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenium4 Cucumber Hybrid Framework Suite" data-provider-thread-count="4">
-    <test name="Test Basics">
+<suite name="Selenium4 Cucumber Hybrid Framework Suite" data-provider-thread-count="2">
+    <test name="Test Basics" preserve-order="true">
         <classes>
             <class name="com.runners.TestRunner"/>
         </classes>

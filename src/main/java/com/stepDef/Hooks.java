@@ -8,7 +8,9 @@ import com.utils.*;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class Hooks {
 
     @Inject
@@ -19,6 +21,8 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
+
+        log.info("beforeScenario " + scenario.getName());
 
         //Initialising the driver
         testContext.invokeDriver();
@@ -32,12 +36,13 @@ public class Hooks {
     @After
     public void afterScenario(Scenario scenario) {
 
+        log.info("afterScenario " + scenario.getName());
+
 		//Passed step adding screenshot
         if (scenario.getStatus().toString().equalsIgnoreCase("PASSED")) {
             ReporterFactory.getInstance().getExtentTest().pass(MediaEntityBuilder.createScreenCaptureFromBase64String(interactionHelper.takeScreenShotOfWebPage()).build());
         } else if (scenario.getStatus().toString().equalsIgnoreCase("FAILED")) {
             ReporterFactory.getInstance().getExtentTest().fail(MediaEntityBuilder.createScreenCaptureFromBase64String(interactionHelper.takeScreenShotOfWebPage()).build());
-
         }
 
         //Close browser

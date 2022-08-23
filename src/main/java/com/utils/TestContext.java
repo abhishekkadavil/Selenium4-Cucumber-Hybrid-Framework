@@ -17,7 +17,7 @@ public class TestContext {
 
     HashMap <String,String> scenarioContext = new HashMap<>();
     @Inject
-    BrowserFactory browserFactory;
+    DriverFactory driverFactory;
 
     //code related to config reader
     @Getter
@@ -29,7 +29,8 @@ public class TestContext {
 
     public void invokeDriver(){
         String browser = (System.getProperty("browser")==null) ? configUtil.getBrowser() : System.getProperty("browser");
-        this.driver = browserFactory.getBrowser(browser);
+        String execType = (System.getProperty("execType")==null) ? "local" : System.getProperty("execType");
+        this.driver = driverFactory.getBrowser(browser,execType);
         this.driver.manage().window().maximize();
     }
 

@@ -1,6 +1,4 @@
 
-d
-java:S1192‰"HDefine a constant instead of duplicating this literal "<null>" 10 times.(‡àœöýÿÿÿÿ
-W	java:S107$"BConstructor has 10 parameters, which is greater than 7 authorized.(‡ÞÇâ
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ô¾§ú
+b	java:S101
+"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ô¾§ú
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×öø×ÿÿÿÿÿ

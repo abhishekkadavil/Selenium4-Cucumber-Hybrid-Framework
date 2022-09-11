@@ -1,6 +1,9 @@
 
 ## Test Execution
 
+### Test application
+https://github.com/abhishekkadavil/nopCommerce#how-to-run
+
 ### We can execute the test in different ways
 * Locally
 	* Through maven

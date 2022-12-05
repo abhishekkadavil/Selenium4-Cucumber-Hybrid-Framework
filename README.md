@@ -1,6 +1,9 @@
 
 ## Test Execution
 
+### Test application
+https://github.com/abhishekkadavil/nopCommerce#how-to-run
+
 ### We can execute the test in different ways
 * Locally
 	* Through maven
@@ -31,7 +34,7 @@ In any point the execution in framework is start from `runners.TestRunner.java` 
 ## Test case creation
 Test cases are defined in the Features folder in the form of `.feature` file. The first step in the feature file is used to provide the test data used in the test case. Once we get the appropriate test data we can continue rest of the test step.
 
-**Test steps(com.stepdef)**
+**Test steps(com.stepDef)**
 * This package contain all the step defined in the feature file like
 	* Reading test data
 	* Do the functionality like login, create order etc
@@ -45,7 +48,7 @@ Test data reading start from test data path provided in step defined in the feat
 Test report high level(suit level) configured will be done through `@BeforeClass` and `@AfterClass` annotations of TestNG inside TestRunner class. each scenario wise step will be added to report through `stepDef.Hooks`
 
 **Scenario level configuration:**
-Each common scenario operations like opening and closing Chrome browser, starting and closing test scenario, Adding screenshots for passed test etc. are done through Cucumber hooks present in the com.stepdef.Hooks class. We are using `@Before` and `@After` hooks of cucumber to achieve this.
+Each common scenario operations like opening and closing Chrome browser, starting and closing test scenario, Adding screenshots for passed test etc. are done through Cucumber hooks present in the com.stepDef.Hooks class. We are using `@Before` and `@After` hooks of cucumber to achieve this.
 
 **Step level configuration:**
 For test step status management are using listener class named `com.utils.TestListener` which implements cucumber plugin `ConcurrentEventListener`. Using this plugin we are managing the status of the test cases by monitoring test steps. We are handling three main status **FAILED, PASSED, SKIPPED**.

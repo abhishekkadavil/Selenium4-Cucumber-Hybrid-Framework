@@ -1,13 +1,10 @@
-package com.testDataModels;
+package com.testdatamodels;
 
 import lombok.*;
 
-@ToString
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-public class Shipping_address {
+public class BillingAddress {
 
 	private String firstName;
 	private String lastName;
@@ -19,4 +16,5 @@ public class Shipping_address {
 	private String homePh;
 	private String mobilePh;
 	private String addressTitle;
+
 }

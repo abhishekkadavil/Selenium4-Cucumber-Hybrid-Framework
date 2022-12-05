@@ -1,4 +1,4 @@
-package com.stepDef;
+package com.stepdef;
 
 import com.google.inject.Inject;
 import com.utils.TestDataFactory;
@@ -39,7 +39,7 @@ public class RegisterUser {
         interactionHelper.selectElementByText(DateOfBirthDay_sel,"23");
         interactionHelper.selectElementByText(DateOfBirthMonth_sel,"June");
         interactionHelper.selectElementByText(DateOfBirthYear_sel,"1993");
-        interactionHelper.typeElement(email_txtBx, TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getUsername());
+        interactionHelper.typeElement(email_txtBx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getUsername());
     }
     @And("add company details")
     public void add_company_details() {
@@ -50,8 +50,8 @@ public class RegisterUser {
     @And("add password")
     public void add_password() {
         interactionHelper.typeElement(password_txtBx,
-                TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getPassword());
-        interactionHelper.typeElement(confirmPassword_txtBx,TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getPassword());
+                TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
+        interactionHelper.typeElement(confirmPassword_txtBx,TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
     }
     @And("user should be able register successfully")
     public void user_should_be_able_register_successfully() {

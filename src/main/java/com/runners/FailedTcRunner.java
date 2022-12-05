@@ -13,7 +13,7 @@ import org.testng.annotations.DataProvider;
         plugin={"com.utils.TestListener",
                 "rerun:target/failedrerun.txt"
         })
-public class FailedTCRunner extends AbstractTestNGCucumberTests {
+public class FailedTcRunner extends AbstractTestNGCucumberTests {
 
     @Override
     @DataProvider(parallel = true)

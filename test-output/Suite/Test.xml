@@ -4,8 +4,8 @@
   <testcase classname="io.cucumber.testng.AbstractTestNGCucumberTests" name="runScenario" time="10.665"/>
   <testcase classname="io.cucumber.testng.AbstractTestNGCucumberTests" name="runScenario" time="10.666">
     <failure type="java.lang.ArithmeticException" message="Person is not eligible to vote">
-      <![CDATA[java.lang.ArithmeticException: Person is not eligible to vote
-at com.stepDef.CheckoutPageSteps.checkout_the_cart(CheckoutPageSteps.java:9)
+        <![CDATA[java.lang.ArithmeticException: Person is not eligible to vote
+at com.stepdef.CheckoutPageSteps.checkout_the_cart(CheckoutPageSteps.java:9)
 at ✽.checkout the cart(file:///home/qbuser/Kadavil/EclipseWorkspace/Selenium4CucumberHybridFramework/Features/CreditCardPaymentFeature.feature:26)
 ]]>
     </failure>

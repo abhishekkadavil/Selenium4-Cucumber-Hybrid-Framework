@@ -1,11 +1,8 @@
-package com.testDataModels;
+package com.testdatamodels;
 
 import lombok.*;
 
-@ToString
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
 public class Item {
 

@@ -1,6 +1,6 @@
 package com.utils;
 
-import com.testDataModels.TestDataModel;
+import com.testdatamodels.TestDataModel;
 
 public class TestDataFactory {
 	
@@ -12,8 +12,6 @@ public class TestDataFactory {
 	{
 		return TestDataFactoryInstance;
 	}
-	
-	
 
 	ThreadLocal<TestDataModel> testDataModelList = new ThreadLocal<TestDataModel>();
 	

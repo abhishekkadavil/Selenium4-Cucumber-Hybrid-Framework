@@ -15,7 +15,7 @@ import org.testng.annotations.DataProvider;
                     })
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    /*
+    /**
         Test can be executed parallel or sequentially;
         Set the parallel = true to execute test parallel,
         false to execute test sequentially

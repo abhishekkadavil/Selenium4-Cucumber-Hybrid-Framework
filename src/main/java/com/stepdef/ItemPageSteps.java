@@ -1,7 +1,7 @@
-package com.stepDef;
+package com.stepdef;
 
 import com.google.inject.Inject;
-import com.testDataModels.Item;
+import com.testdatamodels.Item;
 import com.utils.TestContext;
 import com.utils.TestDataFactory;
 import io.cucumber.java.en.When;

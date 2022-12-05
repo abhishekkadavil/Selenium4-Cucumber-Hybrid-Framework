@@ -1,6 +1,6 @@
-package com.stepDef;
+package com.stepdef;
 
-import com.dataProviders.JsonDataReader;
+import com.dataproviders.JsonDataReader;
 import com.utils.TestDataFactory;
 import io.cucumber.java.en.Given;
 

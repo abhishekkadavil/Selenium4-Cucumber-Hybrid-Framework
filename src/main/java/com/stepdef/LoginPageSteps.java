@@ -1,4 +1,4 @@
-package com.stepDef;
+package com.stepdef;
 
 import com.google.inject.Inject;
 import com.utils.TestContext;
@@ -24,8 +24,8 @@ public class LoginPageSteps {
 	@When("login using the credentials")
 	public void loginUsingTheCredentials() {
 
-		interactionHelper.typeElement(username_txtbx,TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getUsername());
-		interactionHelper.typeElement(password_txtbx,TestDataFactory.getInstance().getTestDataModel().getLogin_credentail().getPassword());
+		interactionHelper.typeElement(username_txtbx,TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getUsername());
+		interactionHelper.typeElement(password_txtbx,TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
 		interactionHelper.clickElement(login_btn);
 	}
 

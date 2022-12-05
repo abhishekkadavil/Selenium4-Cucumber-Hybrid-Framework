@@ -1,4 +1,4 @@
-package com.stepDef;
+package com.stepdef;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;

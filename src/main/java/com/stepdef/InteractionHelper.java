@@ -1,4 +1,4 @@
-package com.stepDef;
+package com.stepdef;
 
 import com.google.inject.Inject;
 import com.utils.TestContext;

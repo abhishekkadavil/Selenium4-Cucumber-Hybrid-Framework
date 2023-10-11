@@ -11,15 +11,6 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 
-		<selenium.version>4.1.1</selenium.version>
-		<webdriver.manager.version>5.1.0</webdriver.manager.version>
-		<io.cucumber.version>7.2.3</io.cucumber.version>
-		<cucumber.testng.version>7.2.3</cucumber.testng.version>
-		<google.guice.version>5.1.0</google.guice.version>
-		<cucumber.guice.version>7.6.0</cucumber.guice.version>
-		<extentreports.version>5.0.6</extentreports.version>
-		<lombok.version>1.18.22</lombok.version>
-		<owner.java8.version>1.0.12</owner.java8.version>
 <!--		<log4j.core.version>2.18.0</log4j.core.version>-->
 <!--		<slf4j.version>2.0.0</slf4j.version>-->
 	</properties>
@@ -28,68 +19,68 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>${selenium.version}</version>
+			<version>4.12.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>${webdriver.manager.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.github.bonigarcia</groupId>-->
+<!--			<artifactId>webdrivermanager</artifactId>-->
+<!--			<version>${webdriver.manager.version}</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>${io.cucumber.version}</version>
+			<version>7.13.0</version>
 		</dependency>
 
 		<!-- for using AbstractTestNGCucumberTests in test runner class -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>${cucumber.testng.version}</version>
+			<version>7.13.0</version>
 		</dependency>
 
 		<!-- for using tesng in the framework we need this jar too; also in the cucumber documentation ther mentioned
 		 to use this jar with cucumber-testng
 		 -->
-<!--		<dependency>-->
-<!--			<groupId>org.testng</groupId>-->
-<!--			<artifactId>testng</artifactId>-->
-<!--			<version>7.4.0</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.7.1</version>
+		</dependency>
 		<!-- using for DI -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>${google.guice.version}</version>
+			<version>6.0.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-guice</artifactId>
-			<version>${cucumber.guice.version}</version>
+			<version>7.13.0</version>
 		</dependency>
 
 		<!-- using for reporting -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>${extentreports.version}</version>
+			<version>5.0.6</version>
 		</dependency>
 
 		<!-- using for avoid setters ang getters -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
+			<version>1.18.24</version>
 		</dependency>
 
 		<!-- using for configuration management in com.utils.ConfigUtil -->
 		<dependency>
 			<groupId>org.aeonbits.owner</groupId>
 			<artifactId>owner-java8</artifactId>
-			<version>${owner.java8.version}</version>
+			<version>1.0.12</version>
 		</dependency>
 
 		<!-- log4j -->
@@ -128,7 +119,15 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
 
 </project>

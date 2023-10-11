@@ -137,25 +137,6 @@ public class ActionHelper {
         return flag;
     }
 
-    public boolean switchToFrameByIndex(WebDriver driver,int index) {
-        boolean flag = false;
-        try {
-            new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe")));
-            driver.switchTo().frame(index);
-            flag = true;
-            return true;
-        } catch (Exception e) {
-
-            return false;
-        } finally {
-            if (flag) {
-                System.out.println("Frame with index \"" + index + "\" is selected");
-            } else {
-                System.out.println("Frame with index \"" + index + "\" is not selected");
-            }
-        }
-    }
-
     public boolean switchToFrameById(WebDriver driver,String idValue) {
         boolean flag = false;
         try {

@@ -5,11 +5,11 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-@CucumberOptions(tags = "@CC_Scenario2",
+@CucumberOptions(tags = "@Login_Scenario2",
 					features = "Features",
 					monochrome = true,
 					dryRun = false,
-					glue = "com.stepDef",
+					glue = "com.stepdef",
 					plugin={"com.utils.TestListener",
                             "rerun:target/failedrerun.txt"
                     })

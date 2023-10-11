@@ -4,6 +4,13 @@
 ### Test application
 https://github.com/abhishekkadavil/nopCommerce#how-to-run
 
+### Plugins needed
+* Cucumber for Java
+* Gherkin
+* Lombok
+* Maven
+* TestNG
+
 ### We can execute the test in different ways
 * Locally
 	* Through maven

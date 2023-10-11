@@ -3,7 +3,7 @@ package com.stepdef;
 import com.google.inject.Inject;
 import com.utils.TestContext;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.compress.utils.IOUtils;
+//import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -205,7 +205,7 @@ public class InteractionHelper {
         File srcfile = testContext.getDriver().findElement(by).getScreenshotAs(OutputType.FILE);
         try {
             InputStream in = new FileInputStream(srcfile);
-            byte[] imageBytes = IOUtils.toByteArray(in);
+            byte[] imageBytes = in.readAllBytes();
             base64 = Base64.getEncoder().encodeToString(imageBytes);
         } catch (IOException e) {
             e.printStackTrace();
@@ -220,7 +220,7 @@ public class InteractionHelper {
         File srcfile = ((TakesScreenshot) testContext.getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             InputStream in = new FileInputStream(srcfile);
-            byte[] imageBytes = IOUtils.toByteArray(in);
+            byte[] imageBytes = in.readAllBytes();
             base64 = Base64.getEncoder().encodeToString(imageBytes);
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,5 +1,5 @@
   {
-    "login_credentail": {
+    "loginCredential": {
       "username": "abhishek.kadavil01@gmail.com",
       "password": "3@Akmaster"
     },
@@ -15,7 +15,7 @@
         "quantity": "3"
       }
     ],
-    "billing_address": {
+    "billingAddress": {
       "firstName": "Abhishek",
       "lastName": "K R",
       "address": "Palakkal",
@@ -27,7 +27,7 @@
       "mobilePh": "09946266914",
       "addressTitle": "HomeAddress"
     },
-    "shipping_address": {
+    "shippingAddress": {
       "firstName": "Abhishek",
       "lastName": "K R",
       "address": "Palakkal",

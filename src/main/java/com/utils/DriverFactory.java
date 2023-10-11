@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
@@ -34,7 +33,6 @@ public class DriverFactory {
 			//Suppress chrome driver logs
 			System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
 
-			WebDriverManager.chromedriver().setup();
 			ChromeOptions choptions = new ChromeOptions();
 			choptions.addArguments("--incognito");
 			if(execType.equalsIgnoreCase("local"))
@@ -61,7 +59,6 @@ public class DriverFactory {
 		}
 		else if(browser.equalsIgnoreCase("firefox"))
 		{
-			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions foptions = new FirefoxOptions();
 			foptions.addArguments("-private");
 			driver = new FirefoxDriver(foptions);

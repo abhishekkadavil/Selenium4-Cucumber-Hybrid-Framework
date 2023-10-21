@@ -1,15 +1,19 @@
+## Overview
+A boilerplate framework that helps you to write automation tests for E2E using selenium.
 
-## Test Execution
+## Prerequisite
 
-### Test application
+#### Test application
 https://github.com/abhishekkadavil/nopCommerce#how-to-run
 
-### Plugins needed
+#### Plugins needed
 * Cucumber for Java
 * Gherkin
 * Lombok
 * Maven
 * TestNG
+
+## Test Execution
 
 ### We can execute the test in different ways
 * Locally
@@ -39,7 +43,7 @@ In any point the execution in framework is start from `runners.TestRunner.java` 
 **RunnerHelper** class will be shared among `runners.TestRunner` and `runners.FailedTCRunner` class to implement code re-usability.
 
 ## Test case creation
-Test cases are defined in the Features folder in the form of `.feature` file. The first step in the feature file is used to provide the test data used in the test case. Once we get the appropriate test data we can continue rest of the test step.
+Test cases are defined in the Features folder in the form of `.feature` file. The first step in the feature file is used to provide the test data used in the test case. Once we get the appropriate test data we can continue rest of the test step. The testdata fields in the json file should same as the fields present in the model class.
 
 **Test steps(com.stepDef)**
 * This package contain all the step defined in the feature file like

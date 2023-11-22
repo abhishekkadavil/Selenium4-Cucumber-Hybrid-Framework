@@ -33,7 +33,7 @@ public class PaymentMethodPageSteps {
 		else
 		{
 			interactionHelper.clickElement(paymentMethod_card_btn);
-			interactionHelper.typeElement(cardHolderName_txtBx,"abhishek Kadavil");
+			interactionHelper.typeElement(cardHolderName_txtBx,"gsadsad Kadavil");
 			interactionHelper.typeElement(cardNumber_txtBx,"4001919257537193");
 
 			interactionHelper.selectElementByIndex(cardExpiryDate_year_sel,3);

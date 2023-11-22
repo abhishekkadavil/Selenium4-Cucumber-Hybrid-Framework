@@ -1,18 +1,18 @@
   {
     "loginCredential": {
-      "username": "abhishekkadavil03@gmail.com",
-      "password": "30"
+      "username": "abhiiuytrrfil04@gmail.com",
+      "password": "3@Akedwefer"
     },
     "items": [
       {
         "url": "http://localhost/apple-macbook-pro-13-inch",
         "size": "M",
-        "quantity": "1"
+        "quantity": "2"
       },
       {
         "url": "http://localhost/htc-one-m8-android-l-50-lollipop",
         "size": "S",
-        "quantity": "1"
+        "quantity": "3"
       }
     ],
     "billingAddress": {
@@ -40,6 +40,6 @@
       "addressTitle": "HomeAddress"
     },
     "payment": {
-      "pmtType": "Credit Card"
+      "pmtType": "Check"
     }
 }

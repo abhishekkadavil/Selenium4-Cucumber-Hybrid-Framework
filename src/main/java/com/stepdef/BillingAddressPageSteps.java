@@ -30,10 +30,10 @@ public class BillingAddressPageSteps {
 
 		interactionHelper.selectElementByText(billing_address_country_sel,"India");
 		interactionHelper.selectElementByText(billing_address_state_sel,"Kerala");
-		interactionHelper.typeElement(billing_address_city_txtbx,"Thrissur");
-		interactionHelper.typeElement(billing_address_address1_txtbx,"Kadavil House, Palakkal");
+		interactionHelper.typeElement(billing_address_city_txtbx,"Therissuer");
+		interactionHelper.typeElement(billing_address_address1_txtbx,"Kadaveeil House, Palakakal");
 		interactionHelper.typeElement(billing_address_pincode_txtbx,"680027");
-		interactionHelper.typeElement(billing_address_phoneno_txtbx,"09946266914");
+		interactionHelper.typeElement(billing_address_phoneno_txtbx,"09946266913");
 		interactionHelper.clickElement(billing_address_save_btn);
 
 	}

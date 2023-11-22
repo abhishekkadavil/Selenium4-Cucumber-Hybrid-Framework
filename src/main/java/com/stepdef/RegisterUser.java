@@ -34,16 +34,16 @@ public class RegisterUser {
     @And("add personal details")
     public void add_personal_details() {
         interactionHelper.clickElement(gender_btn);
-        interactionHelper.typeElement(first_name_txtBx,"Abhishek");
+        interactionHelper.typeElement(first_name_txtBx,"Jhone");
         interactionHelper.typeElement(last_name_txtBx,"Kadavil");
-        interactionHelper.selectElementByText(DateOfBirthDay_sel,"23");
-        interactionHelper.selectElementByText(DateOfBirthMonth_sel,"June");
+        interactionHelper.selectElementByText(DateOfBirthDay_sel,"27");
+        interactionHelper.selectElementByText(DateOfBirthMonth_sel,"May");
         interactionHelper.selectElementByText(DateOfBirthYear_sel,"1993");
         interactionHelper.typeElement(email_txtBx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getUsername());
     }
     @And("add company details")
     public void add_company_details() {
-        interactionHelper.typeElement(company_txtBx,"QBurst");
+        interactionHelper.typeElement(company_txtBx,"QBurstosis");
     }
     @And("add options")
     public void add_options() {    }

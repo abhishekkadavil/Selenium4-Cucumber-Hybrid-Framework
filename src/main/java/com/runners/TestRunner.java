@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-@CucumberOptions(tags = "@Login_Scenario2",
+@CucumberOptions(tags = "@Login",
 					features = "Features",
 					monochrome = true,
 					dryRun = false,

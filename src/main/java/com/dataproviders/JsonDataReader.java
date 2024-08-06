@@ -8,9 +8,13 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+/**
+ * @author Abhishek Kadavil
+ */
 public class JsonDataReader {
 
-    private JsonDataReader(){}
+    private JsonDataReader() {
+    }
 
     @SneakyThrows
     public static synchronized TestDataModel getTestData(String fileName) {

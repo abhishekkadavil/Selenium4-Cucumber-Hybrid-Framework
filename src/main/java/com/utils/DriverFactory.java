@@ -14,59 +14,56 @@ import org.testng.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+/**
+ * @author Abhishek Kadavil
+ */
 @ScenarioScoped
 public class DriverFactory {
 
-	@Inject
-	TestContext testContext;
-	
-	public WebDriver getBrowser(String browser, String execType)
-	{
-		WebDriver driver = null;
+    @Inject
+    TestContext testContext;
 
-		//Suppress selenium logs
-		java.util.logging.Logger.getLogger("org.openqa.selenium").setLevel(java.util.logging.Level.SEVERE);
+    public WebDriver getBrowser(String browser, String execType) {
+        WebDriver driver = null;
 
-		if(browser.equalsIgnoreCase("chrome"))
-		{
-			//Suppress chrome driver logs
-			System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
+        //Suppress selenium logs
+        Logger.getLogger("org.openqa.selenium").setLevel(Level.SEVERE);
 
-			ChromeOptions choptions = new ChromeOptions();
-			choptions.addArguments("--incognito");
-			if(execType.equalsIgnoreCase("local"))
-			{
-				driver = new ChromeDriver(choptions);
-			}
-			else if(execType.equalsIgnoreCase("grid")) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            //Suppress chrome driver logs
+            System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
-				try {
-					driver = (execType.equalsIgnoreCase("grid"))?
-							(new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()),choptions)):
-							(new ChromeDriver());
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-					Assert.fail("MalformedURLException thrown, Grid URL is not correct");
-				}
+            ChromeOptions choptions = new ChromeOptions();
+            choptions.addArguments("--incognito");
+            if (execType.equalsIgnoreCase("local")) {
+                driver = new ChromeDriver(choptions);
+            } else if (execType.equalsIgnoreCase("grid")) {
 
-			}
-			else
-			{
-				System.out.println("************************ execType not recognised ************************");
-			}
+                try {
+                    driver = (execType.equalsIgnoreCase("grid")) ?
+                            (new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), choptions)) :
+                            (new ChromeDriver());
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                    Assert.fail("MalformedURLException thrown, Grid URL is not correct");
+                }
 
-		}
-		else if(browser.equalsIgnoreCase("firefox"))
-		{
-			FirefoxOptions foptions = new FirefoxOptions();
-			foptions.addArguments("-private");
-			driver = new FirefoxDriver(foptions);
-		}
+            } else {
+                System.out.println("************************ execType not recognised ************************");
+            }
+
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            FirefoxOptions foptions = new FirefoxOptions();
+            foptions.addArguments("-private");
+            driver = new FirefoxDriver(foptions);
+        }
 
 
-		return driver;
-		
-	}
+        return driver;
+
+    }
 
 }

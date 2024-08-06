@@ -10,6 +10,9 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author Abhishek Kadavil
+ */
 @Slf4j
 public class Hooks {
 
@@ -38,7 +41,7 @@ public class Hooks {
 
         log.info("afterScenario " + scenario.getName());
 
-		//Passed step adding screenshot
+        //Passed step adding screenshot
         if (scenario.getStatus().toString().equalsIgnoreCase("PASSED")) {
             ReporterFactory.getInstance().getExtentTest().pass(MediaEntityBuilder.createScreenCaptureFromBase64String(interactionHelper.takeScreenShotOfWebPage()).build());
         } else if (scenario.getStatus().toString().equalsIgnoreCase("FAILED")) {

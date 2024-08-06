@@ -22,6 +22,9 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+/**
+ * @author Abhishek Kadavil
+ */
 @Slf4j
 public class InteractionHelper {
 
@@ -30,20 +33,17 @@ public class InteractionHelper {
 
     public WebElement typeElement(By by, String input) {
 
-        log.info("typeElement "+by.toString());
+        log.info("typeElement " + by.toString());
         WebElement element = null;
-        try
-        {
+        try {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
             element = wait.until(ExpectedConditions.elementToBeClickable(by));
             element.clear();
             element.sendKeys(input);
             return element;
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             Assert.fail("***** Error Occured *****" + ex);
-            log.error("typeElement "+ex.toString());
+            log.error("typeElement " + ex.toString());
             return element;
         }
 
@@ -53,18 +53,15 @@ public class InteractionHelper {
 
     public WebElement clickElement(By by) {
 
-        log.info("clickElement "+by.toString());
+        log.info("clickElement " + by.toString());
         WebElement element = null;
-        try
-        {
+        try {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
             element = wait.until(ExpectedConditions.elementToBeClickable(by));
             element.click();
             return element;
-        }
-        catch (Exception ex)
-        {
-            log.error("***** Error Occured ***** "+ex);
+        } catch (Exception ex) {
+            log.error("***** Error Occured ***** " + ex);
             Assert.fail("***** Error Occured *****" + ex);
             return element;
         }
@@ -72,40 +69,34 @@ public class InteractionHelper {
 
     public WebElement selectElementByText(By by, String textToBeSelected) {
 
-        log.info("selectElementByText "+by.toString());
+        log.info("selectElementByText " + by.toString());
         WebElement element = null;
-        try
-        {
+        try {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
             element = wait.until(ExpectedConditions.elementToBeClickable(by));
             Select sel = new Select(element);
             sel.selectByVisibleText(textToBeSelected);
             return element;
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             Assert.fail("***** Error Occured *****" + ex);
-            log.error("selectElementByText "+ex.toString());
+            log.error("selectElementByText " + ex.toString());
             return element;
         }
     }
 
     public WebElement selectElementByIndex(By by, int index) {
 
-        log.info("selectElementByIndex "+by.toString());
+        log.info("selectElementByIndex " + by.toString());
         WebElement element = null;
-        try
-        {
+        try {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
             element = wait.until(ExpectedConditions.elementToBeClickable(by));
             Select sel = new Select(element);
             sel.selectByIndex(index);
             return element;
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             Assert.fail("***** Error Occured *****" + ex);
-            log.error("selectElementByIndex "+ex.toString());
+            log.error("selectElementByIndex " + ex.toString());
             return element;
         }
 
@@ -113,7 +104,7 @@ public class InteractionHelper {
 
     public String getText(By by) {
 
-        log.info("getText "+by.toString());
+        log.info("getText " + by.toString());
         WebElement element = null;
         try {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
@@ -121,14 +112,14 @@ public class InteractionHelper {
             return element.getText();
         } catch (Exception ex) {
             Assert.fail("***** Error Occured *****" + ex);
-            log.error("getText "+ex.toString());
+            log.error("getText " + ex.toString());
             return "";
         }
     }
 
     public String getAttribute(By by, String attName) {
 
-        log.info("getAttribute "+by.toString());
+        log.info("getAttribute " + by.toString());
         WebElement element = null;
         try {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
@@ -137,7 +128,7 @@ public class InteractionHelper {
             return value;
         } catch (Exception ex) {
             Assert.fail("***** Error Occured *****" + ex);
-            log.error("getAttribute "+ex.toString());
+            log.error("getAttribute " + ex.toString());
             return "";
         }
     }
@@ -153,7 +144,7 @@ public class InteractionHelper {
         }
     }
 
-    public List<WebElement> getListOfWebElements(By by){
+    public List<WebElement> getListOfWebElements(By by) {
         WebElement element = null;
         try {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
@@ -181,7 +172,7 @@ public class InteractionHelper {
     public void switchToSecondWindowTab() {
         WebElement element = null;
         try {
-            String [] handles = (String[]) testContext.getDriver().getWindowHandles().toArray();
+            String[] handles = (String[]) testContext.getDriver().getWindowHandles().toArray();
             testContext.getDriver().switchTo().window(handles[1]);
         } catch (Exception ex) {
             Assert.fail("***** Error Occured *****" + ex);
@@ -192,7 +183,7 @@ public class InteractionHelper {
     public void switchToDefaultWindowTab() {
         WebElement element = null;
         try {
-            String [] handles = (String[]) testContext.getDriver().getWindowHandles().toArray();
+            String[] handles = (String[]) testContext.getDriver().getWindowHandles().toArray();
             testContext.getDriver().switchTo().window(handles[0]);
         } catch (Exception ex) {
             Assert.fail("***** Error Occured *****" + ex);
@@ -201,7 +192,7 @@ public class InteractionHelper {
 
     public String takeScreenShotOfElement(By by) {
 
-        String base64="";
+        String base64 = "";
         File srcfile = testContext.getDriver().findElement(by).getScreenshotAs(OutputType.FILE);
         try {
             InputStream in = new FileInputStream(srcfile);
@@ -216,7 +207,7 @@ public class InteractionHelper {
     public String takeScreenShotOfWebPage() {
 
         log.info("takeScreenShotOfWebPage");
-        String base64="";
+        String base64 = "";
         File srcfile = ((TakesScreenshot) testContext.getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             InputStream in = new FileInputStream(srcfile);

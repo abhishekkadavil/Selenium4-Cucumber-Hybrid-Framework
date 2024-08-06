@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Abhishek Kadavil
+ */
 public class ActionHelper {
 
     public void scrollByVisibilityOfElementWebDriver(WebDriver driver, WebElement ele) {
@@ -98,9 +101,7 @@ public class ActionHelper {
             js.executeScript(javaScript, mo);
             flag = true;
             return true;
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
 
             return false;
         } finally {
@@ -122,9 +123,7 @@ public class ActionHelper {
 
             flag = true;
 
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             throw e;
 
         } finally {
@@ -137,7 +136,7 @@ public class ActionHelper {
         return flag;
     }
 
-    public boolean switchToFrameById(WebDriver driver,String idValue) {
+    public boolean switchToFrameById(WebDriver driver, String idValue) {
         boolean flag = false;
         try {
             driver.switchTo().frame(idValue);
@@ -156,7 +155,7 @@ public class ActionHelper {
         }
     }
 
-    public boolean switchToFrameByName(WebDriver driver,String nameValue) {
+    public boolean switchToFrameByName(WebDriver driver, String nameValue) {
         boolean flag = false;
         try {
             driver.switchTo().frame(nameValue);
@@ -192,7 +191,7 @@ public class ActionHelper {
         }
     }
 
-    public void mouseOverElement(WebDriver driver,WebElement element) {
+    public void mouseOverElement(WebDriver driver, WebElement element) {
         boolean flag = false;
         try {
             new Actions(driver).moveToElement(element).build().perform();
@@ -243,7 +242,7 @@ public class ActionHelper {
         }
     }
 
-    public boolean draggable(WebDriver driver,WebElement source, int x, int y) {
+    public boolean draggable(WebDriver driver, WebElement source, int x, int y) {
         boolean flag = false;
         try {
             new Actions(driver).dragAndDropBy(source, x, y).build().perform();
@@ -257,14 +256,14 @@ public class ActionHelper {
 
         } finally {
             if (flag) {
-                System.out.println("Draggable Action is performed on \""+source+"\"");
-            } else if(!flag) {
-                System.out.println("Draggable action is not performed on \""+source+"\"");
+                System.out.println("Draggable Action is performed on \"" + source + "\"");
+            } else if (!flag) {
+                System.out.println("Draggable action is not performed on \"" + source + "\"");
             }
         }
     }
 
-    public boolean draganddrop(WebDriver driver,WebElement source, WebElement target) {
+    public boolean draganddrop(WebDriver driver, WebElement source, WebElement target) {
         boolean flag = false;
         try {
             new Actions(driver).dragAndDrop(source, target).perform();
@@ -276,13 +275,13 @@ public class ActionHelper {
         } finally {
             if (flag) {
                 System.out.println("DragAndDrop Action is performed");
-            } else if(!flag) {
+            } else if (!flag) {
                 System.out.println("DragAndDrop Action is not performed");
             }
         }
     }
 
-    public boolean slider(WebDriver driver,WebElement ele, int x, int y) {
+    public boolean slider(WebDriver driver, WebElement ele, int x, int y) {
         boolean flag = false;
         try {
             // new Actions(driver).dragAndDropBy(dragitem, 400, 1).build()
@@ -303,7 +302,7 @@ public class ActionHelper {
         }
     }
 
-    public boolean rightclick(WebDriver driver,WebElement ele) {
+    public boolean rightclick(WebDriver driver, WebElement ele) {
         boolean flag = false;
         try {
             Actions clicker = new Actions(driver);
@@ -323,18 +322,18 @@ public class ActionHelper {
         }
     }
 
-    public boolean switchWindowByTitle(WebDriver driver,String windowTitle, int count) {
+    public boolean switchWindowByTitle(WebDriver driver, String windowTitle, int count) {
         boolean flag = false;
         try {
             Set<String> windowList = driver.getWindowHandles();
 
             String[] array = windowList.toArray(new String[0]);
 
-            driver.switchTo().window(array[count-1]);
+            driver.switchTo().window(array[count - 1]);
 
-            if (driver.getTitle().contains(windowTitle)){
+            if (driver.getTitle().contains(windowTitle)) {
                 flag = true;
-            }else{
+            } else {
                 flag = false;
             }
             return flag;
@@ -354,8 +353,8 @@ public class ActionHelper {
         boolean flag = false;
         try {
 
-            Set<String> s=driver.getWindowHandles();
-            Object popup[]=s.toArray();
+            Set<String> s = driver.getWindowHandles();
+            Object popup[] = s.toArray();
             driver.switchTo().window(popup[1].toString());
             flag = true;
             return flag;
@@ -375,8 +374,8 @@ public class ActionHelper {
         boolean flag = false;
         try {
 
-            Set<String> s=driver.getWindowHandles();
-            Object popup[]=s.toArray();
+            Set<String> s = driver.getWindowHandles();
+            Object popup[] = s.toArray();
             driver.switchTo().window(popup[0].toString());
             flag = true;
             return flag;
@@ -414,7 +413,6 @@ public class ActionHelper {
      * Verify alert present or not
      *
      * @return: Boolean (True: If alert preset, False: If no alert)
-     *
      */
     public boolean Alert(WebDriver driver) {
         boolean presentFlag = false;
@@ -434,7 +432,7 @@ public class ActionHelper {
         } finally {
             if (!presentFlag) {
                 System.out.println("The Alert is handled successfully");
-            } else{
+            } else {
                 System.out.println("There was no alert to handle");
             }
         }
@@ -442,7 +440,7 @@ public class ActionHelper {
         return presentFlag;
     }
 
-    public boolean launchUrl(WebDriver driver,String url) {
+    public boolean launchUrl(WebDriver driver, String url) {
         boolean flag = false;
         try {
             driver.navigate().to(url);
@@ -452,22 +450,19 @@ public class ActionHelper {
             return false;
         } finally {
             if (flag) {
-                System.out.println("Successfully launched \""+url+"\"");
+                System.out.println("Successfully launched \"" + url + "\"");
             } else {
-                System.out.println("Failed to launch \""+url+"\"");
+                System.out.println("Failed to launch \"" + url + "\"");
             }
         }
     }
 
-    public boolean isAlertPresent(WebDriver driver)
-    {
-        try
-        {
+    public boolean isAlertPresent(WebDriver driver) {
+        try {
             driver.switchTo().alert();
             return true;
         }   // try
-        catch (NoAlertPresentException Ex)
-        {
+        catch (NoAlertPresentException Ex) {
             return false;
         }   // catch
     }
@@ -477,21 +472,20 @@ public class ActionHelper {
 
         String text = driver.getTitle();
         if (flag) {
-            System.out.println("Title of the page is: \""+text+"\"");
+            System.out.println("Title of the page is: \"" + text + "\"");
         }
         return text;
     }
-    
-    public String getCurrentURL(WebDriver driver)  {
+
+    public String getCurrentURL(WebDriver driver) {
         boolean flag = false;
 
         String text = driver.getCurrentUrl();
         if (flag) {
-            System.out.println("Current URL is: \""+text+"\"");
+            System.out.println("Current URL is: \"" + text + "\"");
         }
         return text;
     }
-
 
 
 }

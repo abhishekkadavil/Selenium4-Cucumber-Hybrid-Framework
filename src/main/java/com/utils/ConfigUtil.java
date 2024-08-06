@@ -2,6 +2,9 @@ package com.utils;
 
 import org.aeonbits.owner.Config;
 
+/**
+ * @author Abhishek Kadavil
+ */
 @Config.Sources("file:./src/main/resources/Config.properties")
 public interface ConfigUtil extends Config {
 

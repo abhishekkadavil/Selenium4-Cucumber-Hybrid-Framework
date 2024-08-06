@@ -1,16 +1,20 @@
 package com.runners;
+
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
+/**
+ * @author Abhishek Kadavil
+ */
 @CucumberOptions(
         features = "@target/failedrerun.txt",
         monochrome = true,
         dryRun = false,
         glue = "com.stepDef",
-        plugin={"com.utils.TestListener",
+        plugin = {"com.utils.TestListener",
                 "rerun:target/failedrerun.txt"
         })
 public class FailedTcRunner extends AbstractTestNGCucumberTests {
@@ -22,11 +26,12 @@ public class FailedTcRunner extends AbstractTestNGCucumberTests {
     }
 
     @BeforeClass
-    public void beforeClass() { RunnerHelper.beforeTestSuit(); }
+    public void beforeClass() {
+        RunnerHelper.beforeTestSuit();
+    }
 
     @AfterClass
-    public void afterClass()
-    {
+    public void afterClass() {
         RunnerHelper.afterTestSuit();
     }
 

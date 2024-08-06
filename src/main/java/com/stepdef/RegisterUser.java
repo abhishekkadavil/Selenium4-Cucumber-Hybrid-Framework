@@ -7,6 +7,9 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+/**
+ * @author Abhishek Kadavil
+ */
 public class RegisterUser {
 
     @Inject
@@ -31,33 +34,36 @@ public class RegisterUser {
     public void navigate_to_register_user_page() {
         interactionHelper.clickElement(register_btn);
     }
+
     @And("add personal details")
     public void add_personal_details() {
         interactionHelper.clickElement(gender_btn);
-        interactionHelper.typeElement(first_name_txtBx,"Jhone");
-        interactionHelper.typeElement(last_name_txtBx,"Kadavil");
-        interactionHelper.selectElementByText(DateOfBirthDay_sel,"27");
-        interactionHelper.selectElementByText(DateOfBirthMonth_sel,"May");
-        interactionHelper.selectElementByText(DateOfBirthYear_sel,"1993");
+        interactionHelper.typeElement(first_name_txtBx, "Jhone");
+        interactionHelper.typeElement(last_name_txtBx, "Kadavil");
         interactionHelper.typeElement(email_txtBx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getUsername());
     }
+
     @And("add company details")
     public void add_company_details() {
-        interactionHelper.typeElement(company_txtBx,"QBurstosis");
+        interactionHelper.typeElement(company_txtBx, "QBurstosis");
     }
+
     @And("add options")
-    public void add_options() {    }
+    public void add_options() {
+    }
+
     @And("add password")
     public void add_password() {
         interactionHelper.typeElement(password_txtBx,
                 TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
-        interactionHelper.typeElement(confirmPassword_txtBx,TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
+        interactionHelper.typeElement(confirmPassword_txtBx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
     }
+
     @And("user should be able register successfully")
     public void user_should_be_able_register_successfully() {
 
         interactionHelper.clickElement(register_user_btn);
-        Assert.assertEquals(interactionHelper.getText(reg_result),"Your registration completed");
+        Assert.assertEquals(interactionHelper.getText(reg_result), "Your registration completed");
         interactionHelper.clickElement(logout_btn);
     }
 

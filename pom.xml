@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.12.1</version>
+			<version>4.27.0</version>
 		</dependency>
 
 		<dependency>
@@ -41,13 +41,13 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.7.1</version>
+			<version>7.8.0</version>
 		</dependency>
 		<!-- using for DI -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>6.0.0</version>
+			<version>7.0.0</version>
 		</dependency>
 
 		<dependency>
@@ -67,7 +67,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
+			<version>1.18.36</version>
 		</dependency>
 
 		<!-- using for configuration management in com.utils.ConfigUtil -->

@@ -1,5 +1,11 @@
 ## Overview
 A boilerplate framework that helps you to write automation tests for E2E using selenium.
+#### Note:
+Implemented healenium(self-healing selenium) in branch origin/healenium.
+Execute `sudo docker-compose up` in `Selenium4-Cucumber-Hybrid-Framework/infra` directory.
+<span style="color:red"> **Since it does not provide extensive support, and having a low community resulting the feature to does not merge into the master branch.** </span>
+
+healenium setup: https://github.com/healenium/healenium-example-maven
 
 ## Prerequisite
 

@@ -5,10 +5,7 @@ import com.google.inject.Inject;
 import com.utils.TestContext;
 import lombok.extern.slf4j.Slf4j;
 //import org.apache.commons.io.IOUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -60,6 +57,22 @@ public class InteractionHelper {
             WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(15));
             element = wait.until(ExpectedConditions.elementToBeClickable(by));
             element.click();
+            return element;
+        } catch (Exception ex) {
+            log.error("***** Error Occured ***** " + ex);
+            Assert.fail("***** Error Occured *****" + ex);
+            return element;
+        }
+    }
+
+    public WebElement clickElementUsingJS(By by) {
+
+        log.info("clickElement " + by.toString());
+        WebElement element = null;
+        try {
+            element = testContext.getDriver().findElement(by);
+            JavascriptExecutor js = (JavascriptExecutor) testContext.getDriver();
+            js.executeScript("arguments[0].click();", element);
             return element;
         } catch (Exception ex) {
             log.error("***** Error Occured ***** " + ex);

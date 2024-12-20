@@ -23,7 +23,8 @@ public class CheckoutPageSteps {
     @When("checkout the cart")
     public void checkout_the_cart() throws InterruptedException {
         interactionHelper.clickElement(checkout_notification_bar);
-        interactionHelper.clickElement(shopping_cart_btn);
+//        Thread.sleep(3000);
+        interactionHelper.clickElementUsingJS(shopping_cart_btn);
         interactionHelper.clickElement(termsofservice_chkBx);
         interactionHelper.clickElement(checkout_btn);
     }

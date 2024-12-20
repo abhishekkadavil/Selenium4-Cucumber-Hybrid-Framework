@@ -1,5 +1,6 @@
 package com.utils;
 
+import com.epam.healenium.SelfHealingDriver;
 import com.google.inject.Inject;
 import io.cucumber.guice.ScenarioScoped;
 import lombok.Data;
@@ -26,7 +27,7 @@ public class TestContext {
 
     //@Data annotation will auto generate getter so that we can use getDriver in other classes, as for initialisation
     // that is done from invokeDriver() -> beforeScenario
-    WebDriver driver;
+    SelfHealingDriver driver;
 
     public void invokeDriver() {
         String browser = (System.getProperty("browser") == null) ? configUtil.getBrowser() : System.getProperty("browser");

@@ -7,6 +7,18 @@ Execute `sudo docker-compose up` in `Selenium4-Cucumber-Hybrid-Framework/infra` 
 
 healenium setup: https://github.com/healenium/healenium-example-maven
 
+## Features
+* Cucumber test case
+* Parallel/sequential execution
+* Healenium https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/pull/12
+* Selenium grid support
+* Execute through maven, testng.xml, java class[TestRunner.java]
+* Rerun only failed cases
+* Auto/customisable reporting
+* Scenario context
+* Logs support
+* Configurable environment
+
 ## Prerequisite
 
 #### Test application

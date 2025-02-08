@@ -18,6 +18,8 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 * Scenario context
 * Logs support
 * Configurable environment
+* Interaction helper and wait utils functions
+* Controllable browser version
 
 ## Prerequisite
 
@@ -30,6 +32,7 @@ https://github.com/abhishekkadavil/nopCommerce#how-to-run
 * Lombok
 * Maven
 * TestNG
+* SonarQube(Former SonarLint)
 
 ## Test Execution
 
@@ -136,6 +139,7 @@ We are using `slf4j` to implement `log4j` through `lombok`
 * For logging SlF4j is used because it serves as a simple facade or abstraction for various logging frameworks (e.g. 
   java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. if log4j have any vulnerability issue we can use logback or java.util.logging. Since this is an interface we can easily unplug and plug the frameworks
 * Only used explicit wait, adding implicit and explicit wait in same framework the selenium work in unexpected way - mentioned in the documentation, so removed it.
+* Did not used page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
 
 ## Feature need to add
 * dockerized the framework

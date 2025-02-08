@@ -23,6 +23,9 @@ public interface ConfigUtil extends Config {
     @Key("browser")
     String getBrowser();
 
+    @Key("chromeVersion")
+    String getChromeVersion();
+
     @Key("EnvironmentName")
     String getEnvironmentName();
 

@@ -26,7 +26,7 @@ public class DriverFactory {
     @Inject
     TestContext testContext;
 
-    public WebDriver getBrowser(String browser, String execType) {
+    public WebDriver getBrowser(String browser, String execType, String chromeVersion) {
         WebDriver driver = null;
 
         //Suppress selenium logs
@@ -36,15 +36,21 @@ public class DriverFactory {
             //Suppress chrome driver logs
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
-            ChromeOptions choptions = new ChromeOptions();
-            choptions.addArguments("--incognito");
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--incognito");
+
+            // Specify the Chrome version
+            if(chromeVersion.isEmpty()){
+                chromeOptions.setBrowserVersion(chromeVersion);
+            }
+
             if (execType.equalsIgnoreCase("local")) {
-                driver = new ChromeDriver(choptions);
+                driver = new ChromeDriver(chromeOptions);
             } else if (execType.equalsIgnoreCase("grid")) {
 
                 try {
                     driver = (execType.equalsIgnoreCase("grid")) ?
-                            (new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), choptions)) :
+                            (new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), chromeOptions)) :
                             (new ChromeDriver());
                 } catch (MalformedURLException e) {
                     e.printStackTrace();

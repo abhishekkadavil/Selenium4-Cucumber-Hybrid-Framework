@@ -31,7 +31,8 @@ public class TestContext {
     public void invokeDriver() {
         String browser = (System.getProperty("browser") == null) ? configUtil.getBrowser() : System.getProperty("browser");
         String execType = (System.getProperty("execType") == null) ? "local" : System.getProperty("execType");
-        this.driver = driverFactory.getBrowser(browser, execType);
+        String chromeVersion = (System.getProperty("chromeVersion") == null) ? configUtil.getChromeVersion() : System.getProperty("chromeVersion");
+        this.driver = driverFactory.getBrowser(browser, execType, chromeVersion);
         this.driver.manage().window().maximize();
     }
 

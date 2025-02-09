@@ -1,8 +1,4 @@
 # CODEOWNERS file
 
 # Code owner for files in the root directory
-<<<<<<< HEAD
-/ @abhishekkadavil
-=======
 * @abhishekkadavil
->>>>>>> 550ada7 (Update CODEOWNERS)

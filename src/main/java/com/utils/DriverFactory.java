@@ -60,9 +60,9 @@ public class DriverFactory {
                     log.error(e.toString());
                     Assert.fail("MalformedURLException thrown, Grid URL is not correct");
                 }
-            }
-            else {
-                System.out.println("************************ execType not recognised ************************");
+
+            } else {
+                log.info("************************ execType not recognised ************************");
             }
 
         } else if (browser.equalsIgnoreCase("firefox")) {

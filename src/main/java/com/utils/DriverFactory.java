@@ -2,6 +2,7 @@ package com.utils;
 
 import com.google.inject.Inject;
 import io.cucumber.guice.ScenarioScoped;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -20,6 +21,7 @@ import java.util.logging.Logger;
 /**
  * @author Abhishek Kadavil
  */
+@Slf4j
 @ScenarioScoped
 public class DriverFactory {
 
@@ -53,12 +55,12 @@ public class DriverFactory {
                             (new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), chromeOptions)) :
                             (new ChromeDriver());
                 } catch (MalformedURLException e) {
-                    e.printStackTrace();
+                    log.error(e.toString());
                     Assert.fail("MalformedURLException thrown, Grid URL is not correct");
                 }
 
             } else {
-                System.out.println("************************ execType not recognised ************************");
+                log.info("************************ execType not recognised ************************");
             }
 
         } else if (browser.equalsIgnoreCase("firefox")) {

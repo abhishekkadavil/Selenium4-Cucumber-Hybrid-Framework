@@ -41,3 +41,42 @@ Feature: Login
       | Mutiple/PlaceOrderMutiple/Scenario02.json |
       | Mutiple/PlaceOrderMutiple/Scenario03.json |
       | Mutiple/PlaceOrderMutiple/Scenario04.json |
+
+  @PassPercentageExecutionControl
+  Scenario Outline: Stop test execution if more than 50% test failed
+    Given user is on home page and testdata present in "<TestData>"
+    When login using the credentials
+    Then user should be able to login successfully
+
+    Examples:
+      | TestData                                               |
+      | Mutiple/PassPercentageExecutionControl/Scenario01.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario02.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario03.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario04.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario05.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario06.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario07.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario08.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario09.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario10.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario11.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario12.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario13.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario14.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario15.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario16.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario17.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario18.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario19.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario20.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario21.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario22.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario23.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario24.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario25.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario26.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario27.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario28.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario29.json |
+      | Mutiple/PassPercentageExecutionControl/Scenario30.json |

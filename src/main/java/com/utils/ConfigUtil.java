@@ -17,9 +17,6 @@ public interface ConfigUtil extends Config {
     @Key("Password")
     String getPassword();
 
-    @Key("BrowserWindowSize")
-    String getBrowserWindowSize();
-
     @Key("browser")
     String getBrowser();
 
@@ -34,5 +31,11 @@ public interface ConfigUtil extends Config {
 
     @Key("selenium.grid.url")
     String getSeleniumGridUrl();
+
+    @Key("PassPercentageExecutionControlFlag")
+    boolean getPassPercentageExecutionControlFlag();
+
+    @Key("PassPercentageExecutionControlValue")
+    int getPassPercentageExecutionControlValue();
 
 }

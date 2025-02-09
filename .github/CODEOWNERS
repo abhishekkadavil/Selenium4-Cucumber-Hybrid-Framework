@@ -1,4 +1,4 @@
 # CODEOWNERS file
 
 # Code owner for files in the root directory
-src/ @abhishekkadavil
+* @abhishekkadavil

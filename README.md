@@ -77,6 +77,8 @@ Test cases are defined in the Features folder in the form of `.feature` file. Th
 ## Read Test Data
 Test data reading start from test data path provided in step defined in the feature file. Test data is provided in JSON file in `TestData/{feature name}/{test case01}` path. We are using `JsonDataReader` class to read the data. This read data is set to the `testDataModels.TestDataModel` using the `TestDataFactory`. Since we want to support the parallel execution hence we are using factory method and thread-local class to create TestDataModel per test case using TestDataFactory. In this way each scenario will have its own TestData and will be executed in separate thread. Instead of thread local concept we can also use `@ScenarioScoped` but here we are not using it, Not any particular reason to ignore it, but I want the framework to include all the knowledge I learn from open source community.
 
+We only need to provide necessary fields that need the test to execute eg: `TestData/Login/Scenario01.json` vs `TestData/FirstTimeOrder/Scenario01.json`
+
 ## Test reporting:
 
 **Suit level configuration:**
@@ -149,8 +151,7 @@ We are using `slf4j` to implement `log4j` through `lombok`
 * Did not used page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
 
 ## Feature need to add
-* Need to log exact exception thrown method(if I have given Chrome version as latest and execute test the exception thrown from report function) 
-* Currently even in login scenario whole jons file with data is given, need to make the other fields optional
+* Need to log exact exception thrown method(if I have given Chrome version as latest and execute test the exception thrown from report function)
 * Need to control parallel or sequential execution type from cli
 * Dockerized the framework
 	* https://codefresh.io/blog/not-ignore-dockerignore-2/

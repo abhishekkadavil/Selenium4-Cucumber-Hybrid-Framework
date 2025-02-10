@@ -9,6 +9,7 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 
 ## Features
 * Cucumber test case
+* Can execute test thorough Cucumber or TestNG
 * Parallel/sequential execution
 * Healenium https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/pull/12 - AI powered self-healing selenium
 * Selenium grid support

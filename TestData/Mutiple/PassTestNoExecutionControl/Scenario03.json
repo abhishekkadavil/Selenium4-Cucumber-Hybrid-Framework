@@ -1,0 +1,45 @@
+  {
+    "loginCredential": {
+      "username": "aaaa@gmail.com",
+      "password": "3@@Ssdster"
+    },
+    "items": [
+      {
+        "url": "http://localhost/apple-macbook-pro-13-inch",
+        "size": "M",
+        "quantity": "2"
+      },
+      {
+        "url": "http://localhost/htc-one-m8-android-l-50-lollipop",
+        "size": "S",
+        "quantity": "3"
+      }
+    ],
+    "billingAddress": {
+      "firstName": "Abhishek",
+      "lastName": "K R",
+      "address": "Palakkal",
+      "city": "New York",
+      "state": "New York",
+      "zip": "10001",
+      "country": "United States",
+      "homePh": "09946266914",
+      "mobilePh": "09946266914",
+      "addressTitle": "HomeAddress"
+    },
+    "shippingAddress": {
+      "firstName": "Abhishek",
+      "lastName": "K R",
+      "address": "Palakkal",
+      "city": "New York",
+      "state": "New York",
+      "zip": "10001",
+      "country": "United States",
+      "homePh": "09946266914",
+      "mobilePh": "09946266914",
+      "addressTitle": "HomeAddress"
+    },
+    "payment": {
+      "pmtType": "Check"
+    }
+}

@@ -15,8 +15,6 @@ public class LoginPageSteps {
 
     @Inject
     InteractionHelper interactionHelper;
-    @Inject
-    TestContext testContext;
 
     private By username_txtbx = By.xpath("//input[@id='Email']");
     private By password_txtbx = By.xpath("//input[@id='Password']");

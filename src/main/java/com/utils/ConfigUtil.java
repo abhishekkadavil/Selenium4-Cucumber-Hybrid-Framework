@@ -17,11 +17,11 @@ public interface ConfigUtil extends Config {
     @Key("Password")
     String getPassword();
 
-    @Key("BrowserWindowSize")
-    String getBrowserWindowSize();
-
     @Key("browser")
     String getBrowser();
+
+    @Key("chromeVersion")
+    String getChromeVersion();
 
     @Key("EnvironmentName")
     String getEnvironmentName();
@@ -31,5 +31,11 @@ public interface ConfigUtil extends Config {
 
     @Key("selenium.grid.url")
     String getSeleniumGridUrl();
+
+    @Key("PassTestNoExecutionControlFlag")
+    boolean getPassTestNoExecutionControlFlag();
+
+    @Key("PassTestNoExecutionControlValue")
+    int getPassTestNoExecutionControlValue();
 
 }

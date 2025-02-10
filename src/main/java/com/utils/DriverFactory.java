@@ -3,6 +3,7 @@ package com.utils;
 import com.epam.healenium.SelfHealingDriver;
 import com.google.inject.Inject;
 import io.cucumber.guice.ScenarioScoped;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -21,11 +22,13 @@ import java.util.logging.Logger;
 /**
  * @author Abhishek Kadavil
  */
+@Slf4j
 @ScenarioScoped
 public class DriverFactory {
 
     @Inject
     TestContext testContext;
+
 
     public SelfHealingDriver getBrowser(String browser, String execType) {
         SelfHealingDriver driver = null;
@@ -37,8 +40,14 @@ public class DriverFactory {
             //Suppress chrome driver logs
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
-            ChromeOptions choptions = new ChromeOptions();
-            choptions.addArguments("--incognito");
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--incognito");
+
+            // Specify the Chrome version
+            if(chromeVersion.isEmpty()){
+                chromeOptions.setBrowserVersion(chromeVersion);
+            }
+
             if (execType.equalsIgnoreCase("local")) {
                 WebDriver delegate = new ChromeDriver(choptions);
                 driver = SelfHealingDriver.create(delegate);
@@ -48,7 +57,7 @@ public class DriverFactory {
                     WebDriver delegate = new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), choptions);
                     driver = SelfHealingDriver.create(delegate);
                 } catch (MalformedURLException e) {
-                    e.printStackTrace();
+                    log.error(e.toString());
                     Assert.fail("MalformedURLException thrown, Grid URL is not correct");
                 }
             }

@@ -7,6 +7,23 @@ Execute `sudo docker-compose up` in `Selenium4-Cucumber-Hybrid-Framework/infra` 
 
 healenium setup: https://github.com/healenium/healenium-example-maven
 
+## Features
+* Cucumber test case
+* Can execute test thorough Cucumber or TestNG
+* Parallel/sequential execution
+* Healenium https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/pull/12 - AI powered self-healing selenium
+* Selenium grid support
+* Execute through maven, testng.xml, java class[TestRunner.java]
+* Rerun only failed cases
+* Auto/customisable reporting
+* Scenario context
+* Logs support
+* Configurable environment
+* Interaction helper and wait utils functions
+* Controllable browser version
+* We can control if the test need to continue execution, if the certain number of test is failed.
+  * If we have total of 10 tests, and we need to skip the test after failing first 5 test, We can use this by defining PassPercentageExecutionControlFlag and PassPercentageExecutionControlValue in config property file
+
 ## Prerequisite
 
 #### Test application
@@ -18,6 +35,7 @@ https://github.com/abhishekkadavil/nopCommerce#how-to-run
 * Lombok
 * Maven
 * TestNG
+* SonarQube(Former SonarLint)
 
 ## Test Execution
 
@@ -110,6 +128,10 @@ We are using `slf4j` to implement `log4j` through `lombok`
 ## Why and Why Not
 * OOPS, used in framework
 	* `Runnerhelper` class
+* Why cucumber? Why not TestNG, JUnit etc.
+  * Increase the test readability
+  * Easy to maintain
+  * Easy to update or add tests (rather than use code to create/update test case we can reuse the steps to create/update test cases)
 * Design pattern used
 	* Added factory design pattern in the framework - selecting the browser mechanism
 	* DI injection in Test context
@@ -124,9 +146,13 @@ We are using `slf4j` to implement `log4j` through `lombok`
 * For logging SlF4j is used because it serves as a simple facade or abstraction for various logging frameworks (e.g. 
   java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. if log4j have any vulnerability issue we can use logback or java.util.logging. Since this is an interface we can easily unplug and plug the frameworks
 * Only used explicit wait, adding implicit and explicit wait in same framework the selenium work in unexpected way - mentioned in the documentation, so removed it.
+* Did not used page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
 
 ## Feature need to add
-* dockerized the framework
+* Need to log exact exception thrown method(if I have given Chrome version as latest and execute test the exception thrown from report function) 
+* Currently even in login scenario whole jons file with data is given, need to make the other fields optional
+* Need to control parallel or sequential execution type from cli
+* Dockerized the framework
 	* https://codefresh.io/blog/not-ignore-dockerignore-2/
 * DB Connection should be in singleton pattern
 * Need to run test case from feature file instead of test runner file

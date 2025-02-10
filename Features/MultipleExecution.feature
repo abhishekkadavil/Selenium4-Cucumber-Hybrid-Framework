@@ -42,7 +42,7 @@ Feature: Login
       | Mutiple/PlaceOrderMutiple/Scenario03.json |
       | Mutiple/PlaceOrderMutiple/Scenario04.json |
 
-  @PassPercentageExecutionControl
+  @PassTestNoExecutionControl
   Scenario Outline: Stop test execution if more than 50% test failed
     Given user is on home page and testdata present in "<TestData>"
     When login using the credentials
@@ -50,33 +50,33 @@ Feature: Login
 
     Examples:
       | TestData                                               |
-      | Mutiple/PassPercentageExecutionControl/Scenario01.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario02.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario03.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario04.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario05.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario06.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario07.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario08.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario09.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario10.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario11.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario12.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario13.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario14.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario15.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario16.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario17.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario18.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario19.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario20.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario21.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario22.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario23.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario24.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario25.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario26.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario27.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario28.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario29.json |
-      | Mutiple/PassPercentageExecutionControl/Scenario30.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario01.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario02.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario03.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario04.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario05.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario06.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario07.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario08.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario09.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario10.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario11.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario12.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario13.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario14.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario15.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario16.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario17.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario18.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario19.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario20.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario21.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario22.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario23.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario24.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario25.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario26.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario27.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario28.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario29.json |
+      | Mutiple/PassTestNoExecutionControl/Scenario30.json |

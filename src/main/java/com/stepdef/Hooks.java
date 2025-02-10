@@ -37,9 +37,9 @@ public class Hooks {
         ReporterFactory.getInstance().setExtentTestList(test);
 
         // Pass percentage execution control logic
-        if (testContext.getConfigUtil().getPassPercentageExecutionControlFlag() && PassPercentageExecutionControl.shouldStopExecution(testContext.getConfigUtil().getPassPercentageExecutionControlValue())) {
-            log.error("Stopping further test execution due to failures in the first {} tests.", testContext.getConfigUtil().getPassPercentageExecutionControlValue());
-            throw new PendingException("Stopping test execution as first "+ testContext.getConfigUtil().getPassPercentageExecutionControlValue() +" tests failed.");
+        if (testContext.getConfigUtil().getPassTestNoExecutionControlFlag() && PassTestNoExecutionControl.shouldSkipTest(testContext.getConfigUtil().getPassTestNoExecutionControlValue())) {
+            log.error("Skipping further test execution due to failures in the first {} tests.", testContext.getConfigUtil().getPassTestNoExecutionControlValue());
+            throw new PendingException("Skipping test execution as first "+ testContext.getConfigUtil().getPassTestNoExecutionControlValue() +" tests failed.");
         }
     }
 
@@ -59,8 +59,8 @@ public class Hooks {
         testContext.quitDriver();
 
         // Pass percentage execution control logic
-        if (testContext.getConfigUtil().getPassPercentageExecutionControlFlag() && scenario.isFailed()) {
-            PassPercentageExecutionControl.incrementFailedTests();
+        if (testContext.getConfigUtil().getPassTestNoExecutionControlFlag() && scenario.isFailed()) {
+            PassTestNoExecutionControl.incrementFailureCount();
         }
 
     }

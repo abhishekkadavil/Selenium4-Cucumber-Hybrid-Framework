@@ -32,10 +32,10 @@ public interface ConfigUtil extends Config {
     @Key("selenium.grid.url")
     String getSeleniumGridUrl();
 
-    @Key("PassPercentageExecutionControlFlag")
-    boolean getPassPercentageExecutionControlFlag();
+    @Key("PassTestNoExecutionControlFlag")
+    boolean getPassTestNoExecutionControlFlag();
 
-    @Key("PassPercentageExecutionControlValue")
-    int getPassPercentageExecutionControlValue();
+    @Key("PassTestNoExecutionControlValue")
+    int getPassTestNoExecutionControlValue();
 
 }

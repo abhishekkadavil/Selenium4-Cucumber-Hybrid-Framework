@@ -38,7 +38,7 @@ public class Hooks {
 
         // Pass percentage execution control logic
         if (testContext.getConfigUtil().getPassTestNoExecutionControlFlag() && PassTestNoExecutionControl.shouldSkipTest(testContext.getConfigUtil().getPassTestNoExecutionControlValue())) {
-            log.error("Skipping further test execution due to failures in the first {} tests.", testContext.getConfigUtil().getPassTestNoExecutionControlValue());
+            log.warn("Skipping further test execution due to failures in the first {} tests.", testContext.getConfigUtil().getPassTestNoExecutionControlValue());
             throw new PendingException("Skipping test execution as first "+ testContext.getConfigUtil().getPassTestNoExecutionControlValue() +" tests failed.");
         }
     }

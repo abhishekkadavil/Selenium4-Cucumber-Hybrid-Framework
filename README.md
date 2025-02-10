@@ -9,6 +9,7 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 
 ## Features
 * Cucumber test case
+* Can execute test thorough Cucumber or TestNG
 * Parallel/sequential execution
 * Healenium https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/pull/12 - AI powered self-healing selenium
 * Selenium grid support
@@ -150,6 +151,7 @@ We are using `slf4j` to implement `log4j` through `lombok`
 ## Feature need to add
 * Need to log exact exception thrown method(if I have given Chrome version as latest and execute test the exception thrown from report function) 
 * Currently even in login scenario whole jons file with data is given, need to make the other fields optional
+* Need to control parallel or sequential execution type from cli
 * Dockerized the framework
 	* https://codefresh.io/blog/not-ignore-dockerignore-2/
 * DB Connection should be in singleton pattern

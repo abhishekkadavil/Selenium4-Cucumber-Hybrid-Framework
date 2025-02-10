@@ -1,5 +1,6 @@
 package com.stepdef;
 
+import com.epam.healenium.SelfHealingDriver;
 import com.google.inject.Inject;
 import com.utils.TestContext;
 import lombok.extern.slf4j.Slf4j;
@@ -53,7 +54,7 @@ public class InteractionHelper {
         log.info("clickElement " + by.toString());
         WebElement element = null;
         try {
-            WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(testContext.getDriver(), Duration.ofSeconds(15));
             element = wait.until(ExpectedConditions.elementToBeClickable(by));
             element.click();
             return element;
@@ -221,7 +222,7 @@ public class InteractionHelper {
 
         log.info("takeScreenShotOfWebPage");
         String base64 = "";
-        File srcfile = ((TakesScreenshot) testContext.getDriver()).getScreenshotAs(OutputType.FILE);
+        File srcfile = ((TakesScreenshot) testContext.getDriver().getDelegate()).getScreenshotAs(OutputType.FILE);
         try {
             InputStream in = new FileInputStream(srcfile);
             byte[] imageBytes = in.readAllBytes();

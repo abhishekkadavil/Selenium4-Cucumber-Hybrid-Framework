@@ -150,7 +150,6 @@ We are using `slf4j` to implement `log4j` through `lombok`
 * Did not used page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
 
 ## Feature need to add
-* Need to log exact exception thrown method(if I have given Chrome version as latest and execute test the exception thrown from report function) 
 * Dockerized the framework
 	* https://codefresh.io/blog/not-ignore-dockerignore-2/
 * DB Connection should be in singleton pattern

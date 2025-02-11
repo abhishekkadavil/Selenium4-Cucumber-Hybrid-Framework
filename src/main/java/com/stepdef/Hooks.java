@@ -7,9 +7,9 @@ import com.runners.RunnerHelper;
 import com.utils.*;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.Scenario;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.SkipException;
 
 /**
  * @author Abhishek Kadavil
@@ -39,7 +39,7 @@ public class Hooks {
         // Pass percentage execution control logic
         if (testContext.getConfigUtil().getPassTestNoExecutionControlFlag() && PassTestNoExecutionControl.shouldSkipTest(testContext.getConfigUtil().getPassTestNoExecutionControlValue())) {
             log.warn("Skipping further test execution due to failures in the first {} tests.", testContext.getConfigUtil().getPassTestNoExecutionControlValue());
-            throw new PendingException("Skipping test execution as first "+ testContext.getConfigUtil().getPassTestNoExecutionControlValue() +" tests failed.");
+            throw new SkipException("Skipping test execution as first "+ testContext.getConfigUtil().getPassTestNoExecutionControlValue() +" tests failed.");
         }
     }
 

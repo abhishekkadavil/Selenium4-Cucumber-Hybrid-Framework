@@ -49,7 +49,7 @@ Feature: Login
     Then user should be able to login successfully
 
     Examples:
-      | TestData                                               |
+      | TestData                                           |
       | Mutiple/PassTestNoExecutionControl/Scenario01.json |
       | Mutiple/PassTestNoExecutionControl/Scenario02.json |
       | Mutiple/PassTestNoExecutionControl/Scenario03.json |

@@ -30,7 +30,7 @@ public class DriverFactory {
     TestContext testContext;
 
 
-    public SelfHealingDriver getBrowser(String browser, String execType) {
+    public SelfHealingDriver getBrowser(String browser, String execType, String chromeVersion) {
         SelfHealingDriver driver = null;
 
         //Suppress selenium logs
@@ -49,12 +49,12 @@ public class DriverFactory {
             }
 
             if (execType.equalsIgnoreCase("local")) {
-                WebDriver delegate = new ChromeDriver(choptions);
+                WebDriver delegate = new ChromeDriver(chromeOptions);
                 driver = SelfHealingDriver.create(delegate);
             }
             else if (execType.equalsIgnoreCase("grid")) {
                 try {
-                    WebDriver delegate = new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), choptions);
+                    WebDriver delegate = new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), chromeOptions);
                     driver = SelfHealingDriver.create(delegate);
                 } catch (MalformedURLException e) {
                     log.error(e.toString());

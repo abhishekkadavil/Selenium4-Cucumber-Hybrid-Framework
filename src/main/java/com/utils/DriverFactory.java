@@ -42,7 +42,7 @@ public class DriverFactory {
             chromeOptions.addArguments("--incognito");
 
             // Specify the Chrome version
-            if(chromeVersion.isEmpty()){
+            if(!chromeVersion.equalsIgnoreCase("")){
                 chromeOptions.setBrowserVersion(chromeVersion);
             }
 

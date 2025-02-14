@@ -1,7 +1,6 @@
 package com.stepdef;
 
 import com.google.inject.Inject;
-import com.utils.TestContext;
 import com.utils.TestDataFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,9 +36,8 @@ public class LoginPageSteps {
 
     @Then("invalid user error should appear")
     public void invalidUserErrorShouldAppear() {
-        Assert.assertEquals(interactionHelper.getText(login_error_msg), "Login was unsuccessful. Please correct the " +
-                "errors and try again.\n" +
-                "No customer account found");
+        Assert.assertEquals(interactionHelper.getText(login_error_msg), "Login was unsuccessful. Please correct the errors and try again.\n" +
+                "The credentials provided are incorrect");
     }
 
     @Then("{string} message should appear")

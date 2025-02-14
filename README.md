@@ -91,13 +91,13 @@ For test step status management are using listener class named `com.utils.TestLi
 
 ## Scenario context
 All the operations which are common in scenario level like **driver management, data passing between test step** are 
-done through `com.utils.TestContext`. i.e. During the execution if we want to share the driver or store the order number in one step and use that order number in different step, then we need to use TestContext.
-* TestContext is marked with `@ScenarioScoped`, so the class will have separate copy of instance for each scenario
-* TestContext contain a map we can use this map to manipulate data.
+done through `com.utils.ScenarioContext`. i.e. During the execution if we want to share the driver or store the order number in one step and use that order number in different step, then we need to use ScenarioContext.
+* ScenarioContext is marked with `@ScenarioScoped`, so the class will have separate copy of instance for each scenario
+* ScenarioContext contain a map we can use this map to manipulate data.
 * We are using google-guice for DI
 
 ## Configuration:
-Configurations for the test suits are done through `com.utils.ConfigUtil` interface which extends `org.aeonbits.owner.Config`. Suit level configuration are done in `TestContext` class.
+Configurations for the test suits are done through `com.utils.ConfigUtil` interface which extends `org.aeonbits.owner.Config`. Suit level configuration are done in `ScenarioContext` class.
 
 ## Logs:
 We are using `slf4j` to implement `log4j` through `lombok`
@@ -115,7 +115,7 @@ We are using `slf4j` to implement `log4j` through `lombok`
 * In the current framework we have optimised the page management by combining POM with step def files, By doing so it is easily manageable, also creating new test case require only small effort.
 * Added `google-juice` and `cucumber-juice` for managing the state of driver object, class object etc
 * Added the `@ScenarioScoped`(the object of a class marked this annotation is only created for one scenario and destroyed after the use)
-	* Added functionality of TestContext to accommodate all the common function in a scenario perspective eg: initialising and quitting a browser driver
+	* Added functionality of ScenarioContext to accommodate all the common function in a scenario perspective eg: initialising and quitting a browser driver
 	* Made the BrowserFactory to `@ScenarioScoped` since we want to support parallel testing each scenario needed new instance of driver
 * Added `InteractionHelper` class so less code in step def classes
 * Most of the exceptions are also handling in `InteractionHelper` class

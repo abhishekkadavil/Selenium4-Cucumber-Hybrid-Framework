@@ -1,7 +1,7 @@
 package com.stepdef;
 
 import com.google.inject.Inject;
-import com.utils.TestContext;
+import com.utils.ScenarioContext;
 import org.openqa.selenium.By;
 import io.cucumber.java.en.When;
 
@@ -13,7 +13,7 @@ public class CheckoutPageSteps {
     @Inject
     InteractionHelper interactionHelper;
     @Inject
-    TestContext testContext;
+    ScenarioContext scenarioContext;
 
     private By checkout_notification_bar = By.xpath("//div[@id='bar-notification']//span");
     private By shopping_cart_btn = By.xpath("//a[@class='ico-cart']");

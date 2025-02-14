@@ -18,7 +18,7 @@ import org.testng.SkipException;
 public class Hooks {
 
     @Inject
-    TestContext testContext;
+    ScenarioContext scenarioContext;
 
     @Inject
     InteractionHelper interactionHelper;
@@ -30,17 +30,17 @@ public class Hooks {
             log.info("beforeScenario {}", scenario.getName());
 
             // Initialising the driver
-            testContext.invokeDriver();
-            testContext.getDriver().navigate().to(testContext.getConfigUtil().getBaseURL());
+            scenarioContext.invokeDriver();
+            scenarioContext.getDriver().navigate().to(TestContext.configUtil.getBaseURL());
 
             // Create new test for each scenario
             ExtentTest test = RunnerHelper.extent.createTest(scenario.getName());
             ReporterFactory.getInstance().setExtentTestList(test);
 
             // Pass percentage execution control logic
-            if (testContext.getConfigUtil().getPassTestNoExecutionControlFlag() && PassTestNoExecutionControl.shouldSkipTest(testContext.getConfigUtil().getPassTestNoExecutionControlValue())) {
-                log.warn("Skipping further test execution due to failures in the first {} tests.", testContext.getConfigUtil().getPassTestNoExecutionControlValue());
-                throw new SkipException("Skipping test execution as first "+ testContext.getConfigUtil().getPassTestNoExecutionControlValue() +" tests failed.");
+            if (TestContext.configUtil.getPassTestNoExecutionControlFlag() && PassTestNoExecutionControl.shouldSkipTest(TestContext.configUtil.getPassTestNoExecutionControlValue())) {
+                log.warn("Skipping further test execution due to failures in the first {} tests.", TestContext.configUtil.getPassTestNoExecutionControlValue());
+                throw new SkipException("Skipping test execution as first "+ TestContext.configUtil.getPassTestNoExecutionControlValue() +" tests failed.");
             }
         }
         catch (Exception e){
@@ -62,7 +62,7 @@ public class Hooks {
             }
 
             // Pass percentage execution control logic
-            if (testContext.getConfigUtil().getPassTestNoExecutionControlFlag() && scenario.isFailed()) {
+            if (TestContext.configUtil.getPassTestNoExecutionControlFlag() && scenario.isFailed()) {
                 PassTestNoExecutionControl.incrementFailureCount();
             }
         }
@@ -71,7 +71,7 @@ public class Hooks {
         }
         finally {
             //Close browser
-            testContext.quitDriver();
+            scenarioContext.quitDriver();
         }
     }
 

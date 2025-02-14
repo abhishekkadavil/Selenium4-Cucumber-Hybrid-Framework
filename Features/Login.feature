@@ -26,4 +26,4 @@ Feature: Login
  Scenario: login exception test case
   Given user is on home page and testdata present in "Login/Scenario04.json"
   When login using the credentials
-  Then user should be able to login successfully
+  And add item to cart

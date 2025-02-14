@@ -1,7 +1,7 @@
 package com.stepdef;
 
 import com.google.inject.Inject;
-import com.utils.TestContext;
+import com.utils.ScenarioContext;
 import io.cucumber.java.en.Then;
 
 /**
@@ -10,11 +10,11 @@ import io.cucumber.java.en.Then;
 public class OrderHistoryPageSteps {
 
     @Inject
-    TestContext testContext;
+    ScenarioContext scenarioContext;
 
     @Then("order can be view in order history")
     public void order_can_be_view_in_order_history() {
-        testContext.getDriver().navigate().to("http://localhost/order/history");
+        scenarioContext.getDriver().navigate().to("http://localhost/order/history");
     }
 
 }

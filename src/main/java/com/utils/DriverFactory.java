@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 public class DriverFactory {
 
     @Inject
-    TestContext testContext;
+    ScenarioContext scenarioContext;
 
     public WebDriver getBrowser(String browser, String execType, String chromeVersion) {
         WebDriver driver = null;
@@ -42,7 +42,7 @@ public class DriverFactory {
             chromeOptions.addArguments("--incognito");
 
             // Specify the Chrome version
-            if(chromeVersion.isEmpty()){
+            if(!chromeVersion.equalsIgnoreCase("")){
                 chromeOptions.setBrowserVersion(chromeVersion);
             }
 
@@ -52,7 +52,7 @@ public class DriverFactory {
 
                 try {
                     driver = (execType.equalsIgnoreCase("grid")) ?
-                            (new RemoteWebDriver(new URL(testContext.getConfigUtil().getSeleniumGridUrl()), chromeOptions)) :
+                            (new RemoteWebDriver(new URL(TestContext.configUtil.getSeleniumGridUrl()), chromeOptions)) :
                             (new ChromeDriver());
                 } catch (MalformedURLException e) {
                     log.error(e.toString());

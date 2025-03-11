@@ -29,10 +29,6 @@ public class Hooks {
         try{
             log.info("beforeScenario {}", scenario.getName());
 
-            // Initialising the driver
-            scenarioContext.invokeDriver();
-            scenarioContext.getDriver().navigate().to(TestContext.configUtil.getBaseURL());
-
             // Create new test for each scenario
             ExtentTest test = RunnerHelper.extent.createTest(scenario.getName());
             ReporterFactory.getInstance().setExtentTestList(test);
@@ -54,16 +50,18 @@ public class Hooks {
         try{
             log.info("afterScenario {}", scenario.getName());
 
-            //Passed step adding screenshot
-            if (scenario.getStatus().toString().equalsIgnoreCase("PASSED")) {
-                ReporterFactory.getInstance().getExtentTest().pass(MediaEntityBuilder.createScreenCaptureFromBase64String(interactionHelper.takeScreenShotOfWebPage()).build());
-            } else if (scenario.getStatus().toString().equalsIgnoreCase("FAILED")) {
-                ReporterFactory.getInstance().getExtentTest().fail(MediaEntityBuilder.createScreenCaptureFromBase64String(interactionHelper.takeScreenShotOfWebPage()).build());
-            }
+            if(scenarioContext.getDriver()!=null) {
+                //Passed step adding screenshot
+                if (scenario.getStatus().toString().equalsIgnoreCase("PASSED")) {
+                    ReporterFactory.getInstance().getExtentTest().pass(MediaEntityBuilder.createScreenCaptureFromBase64String(interactionHelper.takeScreenShotOfWebPage()).build());
+                } else if (scenario.getStatus().toString().equalsIgnoreCase("FAILED")) {
+                    ReporterFactory.getInstance().getExtentTest().fail(MediaEntityBuilder.createScreenCaptureFromBase64String(interactionHelper.takeScreenShotOfWebPage()).build());
+                }
 
-            // Pass percentage execution control logic
-            if (TestContext.configUtil.getPassTestNoExecutionControlFlag() && scenario.isFailed()) {
-                PassTestNoExecutionControl.incrementFailureCount();
+                // Pass percentage execution control logic
+                if (TestContext.configUtil.getPassTestNoExecutionControlFlag() && scenario.isFailed()) {
+                    PassTestNoExecutionControl.incrementFailureCount();
+                }
             }
         }
         catch (Exception e){

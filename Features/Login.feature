@@ -27,3 +27,9 @@ Feature: Login
   Given user is on home page and testdata present in "Login/Scenario04.json"
   When login using the credentials
   And add item to cart
+
+ @Login_Scenario5
+ Scenario: login with browser in the step
+  Given user is on home page in "firefox" browser and testdata present in "Login/Scenario05.json"
+  When login using the credentials
+  Then user should be able to login successfully

@@ -1,6 +1,5 @@
 package com.utils;
 
-import com.google.inject.Inject;
 import io.cucumber.guice.ScenarioScoped;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
@@ -24,9 +23,6 @@ import java.util.logging.Logger;
 @Slf4j
 @ScenarioScoped
 public class DriverFactory {
-
-    @Inject
-    ScenarioContext scenarioContext;
 
     public WebDriver getBrowser(String browser, String execType, String chromeVersion) {
         WebDriver driver = null;

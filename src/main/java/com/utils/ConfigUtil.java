@@ -38,4 +38,7 @@ public interface ConfigUtil extends Config {
     @Key("PassTestNoExecutionControlValue")
     int getPassTestNoExecutionControlValue();
 
+    @Key("MaxFlakyTestRetryCount")
+    int getMaxFlakyTestRetryCount();
+
 }

@@ -133,7 +133,10 @@ We are using `slf4j` to implement `log4j` through `lombok`
 ## Why and Why Not
 * OOPS, used in framework
 	* `Runnerhelper` class
-* Why cucumber? Why not TestNG, JUnit etc.
+* Why cucumber-TestNG? Why not Cucumber, TestNG, JUnit etc.
+  * I implemented Cucumber-TestNG so that we can use both TestNG and cucumber feature 
+    * Used IRetryAnalyzer for retrying flaky tests
+    * Used annotations like @BeforeClass, @AfterClass, @DataProvider, @Test etc
   * Increase the test readability
   * Easy to maintain
   * Easy to update or add tests (rather than use code to create/update test case we can reuse the steps to create/update test cases)

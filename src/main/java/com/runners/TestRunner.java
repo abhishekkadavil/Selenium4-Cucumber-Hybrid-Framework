@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 /**
  * @author Abhishek Kadavil
  */
-@CucumberOptions(tags = "@Login_Scenario1",
+@CucumberOptions(tags = "@Login",
         features = "Features",
         monochrome = true,
         dryRun = false,

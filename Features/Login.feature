@@ -16,7 +16,7 @@ Feature: Login
   When login using the credentials
   Then invalid user error should appear
 
- @Login_Scenario3
+ @Login_Scenario3 @RetryFlakyTests
  Scenario: failed test case
   Given user is on home page and testdata present in "Login/Scenario03.json"
   When login using the credentials
@@ -33,3 +33,9 @@ Feature: Login
   Given user is on home page in "firefox" browser and testdata present in "Login/Scenario05.json"
   When login using the credentials
   Then user should be able to login successfully
+
+ @Login_Scenario6 @RetryFlakyTests
+ Scenario: failed test case
+  Given user is on home page and testdata present in "Login/Scenario03.json"
+  When login using the credentials
+  Then "invalid user error1" message should appear

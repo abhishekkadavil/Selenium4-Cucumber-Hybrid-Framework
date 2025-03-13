@@ -16,6 +16,7 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 * Rerun only failed cases
 * Auto/customisable reporting
 * Scenario context
+* Added `@Author` and `@Category` tags in reporting so that we can categorise with different parameters. eg: [Login.feature](Features/Login.feature)
 * Logs support
 * Configurable environment
 * Interaction helper and wait utils functions

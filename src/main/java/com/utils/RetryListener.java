@@ -22,11 +22,8 @@ public class RetryListener implements IRetryAnalyzer {
                 retryCount.set(retryCount.get() + 1);
                 return true; // Retry the test
             }
-            return false; // No more retries
         }
-        else {
-            return false; // No more retries
-        }
+        return false; // No more retries
 
     }
 }

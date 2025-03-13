@@ -21,7 +21,7 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 * Interaction helper and wait utils functions
 * Controllable browser version - `chromeVersion` in [Config.properties](src/main/resources/Config.properties)
 * Controllable browser with respect to scenario eg: Login_Scenario5
-* Retry flaky test cases(Not implemented in TestNG.xml execution, same can be implemented using annotation transformer of TestNG) - `MaxFlakyTestRetryCount` in [Config.properties](src/main/resources/Config.properties)
+* Retry flaky test cases(Not implemented in TestNG.xml execution, same can be implemented using annotation transformer of TestNG) - `MaxFlakyTestRetryCount` and `FlakyTestRetryFlag` in [Config.properties](src/main/resources/Config.properties)
 * We can control if the test need to continue execution, if the certain number of test is failed. eg: `@PassTestNoExecutionControl`
   * If we have total of 10 tests, and we need to skip the test after failing first 5 test, We can use this by defining PassTestExecutionControlNumFlag and PassTestExecutionControlNum in config property file
 

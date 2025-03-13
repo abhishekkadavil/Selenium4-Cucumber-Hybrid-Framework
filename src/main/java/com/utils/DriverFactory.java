@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 @ScenarioScoped
 public class DriverFactory {
 
-    public WebDriver getBrowser(String browser, String execType, String chromeVersion) {
+    public WebDriver getDriver(String browser, String execType, String chromeVersion) {
         WebDriver driver = null;
 
         //Suppress selenium logs
@@ -64,7 +64,6 @@ public class DriverFactory {
             foptions.addArguments("-private");
             driver = new FirefoxDriver(foptions);
         }
-
 
         return driver;
 

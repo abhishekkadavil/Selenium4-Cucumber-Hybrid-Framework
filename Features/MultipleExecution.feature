@@ -43,7 +43,7 @@ Feature: Login
       | Mutiple/PlaceOrderMutiple/Scenario04.json |
 
   @PassTestNoExecutionControl
-  Scenario Outline: Stop test execution if more than 50% test failed
+  Scenario Outline: Stop test execution if more than PassTestExecutionControlNum test failed
     Given user is on home page and testdata present in "<TestData>"
     When login using the credentials
     Then user should be able to login successfully

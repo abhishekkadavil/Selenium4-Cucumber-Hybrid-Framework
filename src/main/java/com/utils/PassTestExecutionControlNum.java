@@ -6,10 +6,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @author Abhishek Kadavil
  */
-public class PassTestNoExecutionControl {
+public class PassTestExecutionControlNum {
 
-    private PassTestNoExecutionControl(){ }
+    private PassTestExecutionControlNum(){ }
 
+    // AtomicInteger is thread safe
     private static final AtomicInteger failedTestsCount = new AtomicInteger(0);
 
     public static void incrementFailureCount() {

@@ -15,10 +15,18 @@ public class RetryListener implements IRetryAnalyzer {
 
     @Override
     public boolean retry(ITestResult result) {
-        if (retryCount.get() < maxRetryCount) {
-            retryCount.set(retryCount.get() + 1);
-            return true; // Retry the test
+
+        if (TestContext.configUtil.getFlakyTestRetryFlag())
+        {
+            if (retryCount.get() < maxRetryCount) {
+                retryCount.set(retryCount.get() + 1);
+                return true; // Retry the test
+            }
+            return false; // No more retries
         }
-        return false; // No more retries
+        else {
+            return false; // No more retries
+        }
+
     }
 }

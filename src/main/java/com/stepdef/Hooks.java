@@ -34,13 +34,18 @@ public class Hooks {
             ReporterFactory.getInstance().setExtentTestList(test);
 
             // Pass percentage execution control logic
-            if (TestContext.configUtil.getPassTestNoExecutionControlFlag() && PassTestNoExecutionControl.shouldSkipTest(TestContext.configUtil.getPassTestNoExecutionControlValue())) {
-                log.warn("Skipping further test execution due to failures in the first {} tests.", TestContext.configUtil.getPassTestNoExecutionControlValue());
-                throw new SkipException("Skipping test execution as first "+ TestContext.configUtil.getPassTestNoExecutionControlValue() +" tests failed.");
+            if (TestContext.configUtil.getPassTestExecutionControlNumFlag() && PassTestExecutionControlNum.shouldSkipTest(TestContext.configUtil.getPassTestExecutionControlNum())) {
+                log.warn("Skipping further test execution due to failures in the first {} tests.", TestContext.configUtil.getPassTestExecutionControlNum());
+                throw new SkipException("Skipping test execution as first "+ TestContext.configUtil.getPassTestExecutionControlNum() +" tests failed.");
             }
+        }
+        catch (SkipException skipEx) {
+            log.warn("Test execution skipped: {}", skipEx.getMessage());
+            throw skipEx;
         }
         catch (Exception e){
             log.error("Setup failed in @Before hook: ", e);
+            throw e;
         }
     }
 
@@ -59,8 +64,8 @@ public class Hooks {
                 }
 
                 // Pass percentage execution control logic
-                if (TestContext.configUtil.getPassTestNoExecutionControlFlag() && scenario.isFailed()) {
-                    PassTestNoExecutionControl.incrementFailureCount();
+                if (TestContext.configUtil.getPassTestExecutionControlNumFlag() && scenario.isFailed()) {
+                    PassTestExecutionControlNum.incrementFailureCount();
                 }
             }
         }
@@ -68,8 +73,10 @@ public class Hooks {
             log.error("Setup failed in @After hook: ", e);
         }
         finally {
-            //Close browser
-            scenarioContext.quitDriver();
+            if(scenarioContext.getDriver()!=null) {
+                //Close browser
+                scenarioContext.quitDriver();
+            }
         }
     }
 

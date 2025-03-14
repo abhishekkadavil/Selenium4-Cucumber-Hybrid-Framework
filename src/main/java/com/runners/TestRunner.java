@@ -1,10 +1,11 @@
 package com.runners;
 
+import com.utils.RetryListener;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
+import io.cucumber.testng.FeatureWrapper;
+import io.cucumber.testng.PickleWrapper;
+import org.testng.annotations.*;
 
 /**
  * @author Abhishek Kadavil
@@ -28,6 +29,18 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
+    }
+
+    /** Implemented for retrying flaky test cases*/
+    @Test(
+            groups = {"cucumber"},
+            description = "Runs Cucumber Scenarios",
+            dataProvider = "scenarios",
+            retryAnalyzer = RetryListener.class
+    )
+    @Override
+    public void runScenario(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
+        super.runScenario(pickleWrapper, featureWrapper);
     }
 
     @BeforeClass

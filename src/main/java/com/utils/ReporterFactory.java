@@ -28,7 +28,7 @@ public class ReporterFactory {
         extentTestList.set(extentTest);
     }
 
-    public void finisheExtentTest() {
+    public void finishedExtentTest() {
         extentTestList.remove();
     }
 

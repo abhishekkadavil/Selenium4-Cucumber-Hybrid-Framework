@@ -14,7 +14,7 @@ public class RunnerHelper {
     public static ExtentSparkReporter spark;
     public static ExtentReports extent;
 
-    public static void beforeTestSuit() {
+    public static void  beforeTestSuit() {
         //code related to report
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         String reportFileName = "Test-Report-" + timeStamp + ".html";
@@ -23,6 +23,8 @@ public class RunnerHelper {
         RunnerHelper.extent = new ExtentReports();
         RunnerHelper.extent.attachReporter(RunnerHelper.spark);
         RunnerHelper.extent.setSystemInfo("os", "Ubuntu");
+        RunnerHelper.extent.setSystemInfo("Tester", "Abhishek Kadavil");
+        RunnerHelper.extent.setSystemInfo("Git repo", "https://github.com/abhishekkadavil");
     }
 
     public static void afterTestSuit() {

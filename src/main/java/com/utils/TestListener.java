@@ -20,7 +20,7 @@ public class TestListener implements ConcurrentEventListener {
     }
 
     private void handleTestCaseFinished(TestCaseFinished event) {
-        ReporterFactory.getInstance().finisheExtentTest();
+        ReporterFactory.getInstance().finishedExtentTest();
     }
 
     private void handleTestStepFinished(TestStepFinished event) {

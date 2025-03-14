@@ -16,12 +16,15 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 * Rerun only failed cases
 * Auto/customisable reporting
 * Scenario context
+* Added `@Author` and `@Category` tags in reporting so that we can categorise with different parameters. eg: [Login.feature](Features/Login.feature)
 * Logs support
 * Configurable environment
 * Interaction helper and wait utils functions
-* Controllable browser version
-* We can control if the test need to continue execution, if the certain number of test is failed.
-  * If we have total of 10 tests, and we need to skip the test after failing first 5 test, We can use this by defining PassPercentageExecutionControlFlag and PassPercentageExecutionControlValue in config property file
+* Controllable browser version - `chromeVersion` in [Config.properties](src/main/resources/Config.properties)
+* Controllable browser with respect to scenario eg: Login_Scenario5
+* Retry flaky test cases(Not implemented in TestNG.xml execution, same can be implemented using annotation transformer of TestNG) - `MaxFlakyTestRetryCount` and `FlakyTestRetryFlag` in [Config.properties](src/main/resources/Config.properties)
+* We can control if the test need to continue execution, if the certain number of test is failed. eg: `@PassTestNoExecutionControl`
+  * If we have total of 10 tests, and we need to skip the test after failing first 5 test, We can use this by defining PassTestExecutionControlNumFlag and PassTestExecutionControlNum in config property file
 
 ## Prerequisite
 
@@ -125,11 +128,16 @@ We are using `slf4j` to implement `log4j` through `lombok`
 * Added `WaitHelper` class
 * Suppressed chrome driver and selenium warning message
 * Added gitignore file to ignore unnecessary file tracking
+* Controllable browser with respect to scenario - 
+* Retry flaky test cases
 
 ## Why and Why Not
 * OOPS, used in framework
 	* `Runnerhelper` class
-* Why cucumber? Why not TestNG, JUnit etc.
+* Why cucumber-TestNG? Why not Cucumber, TestNG, JUnit etc.
+  * I implemented Cucumber-TestNG so that we can use both TestNG and cucumber feature 
+    * Used IRetryAnalyzer for retrying flaky tests
+    * Used annotations like @BeforeClass, @AfterClass, @DataProvider, @Test etc
   * Increase the test readability
   * Easy to maintain
   * Easy to update or add tests (rather than use code to create/update test case we can reuse the steps to create/update test cases)

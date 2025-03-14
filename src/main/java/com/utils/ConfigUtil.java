@@ -32,10 +32,16 @@ public interface ConfigUtil extends Config {
     @Key("selenium.grid.url")
     String getSeleniumGridUrl();
 
-    @Key("PassTestNoExecutionControlFlag")
-    boolean getPassTestNoExecutionControlFlag();
+    @Key("PassTestExecutionControlNumFlag")
+    boolean getPassTestExecutionControlNumFlag();
 
-    @Key("PassTestNoExecutionControlValue")
-    int getPassTestNoExecutionControlValue();
+    @Key("PassTestExecutionControlNum")
+    int getPassTestExecutionControlNum();
+
+    @Key("FlakyTestRetryFlag")
+    boolean getFlakyTestRetryFlag();
+
+    @Key("MaxFlakyTestRetryCount")
+    int getMaxFlakyTestRetryCount();
 
 }

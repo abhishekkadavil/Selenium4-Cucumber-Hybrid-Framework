@@ -1,6 +1,5 @@
 package com.utils;
 
-import com.google.inject.Inject;
 import io.cucumber.guice.ScenarioScoped;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
@@ -25,10 +24,7 @@ import java.util.logging.Logger;
 @ScenarioScoped
 public class DriverFactory {
 
-    @Inject
-    ScenarioContext scenarioContext;
-
-    public WebDriver getBrowser(String browser, String execType, String chromeVersion) {
+    public WebDriver getDriver(String browser, String execType, String chromeVersion) {
         WebDriver driver = null;
 
         //Suppress selenium logs
@@ -68,7 +64,6 @@ public class DriverFactory {
             foptions.addArguments("-private");
             driver = new FirefoxDriver(foptions);
         }
-
 
         return driver;
 

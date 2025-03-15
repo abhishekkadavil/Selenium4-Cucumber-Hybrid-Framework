@@ -53,7 +53,7 @@ https://github.com/abhishekkadavil/nopCommerce#how-to-run
 	* Through the `TestRunner.java` class
 * Using selenium grid
 	* selenium docker grid(**docker-compose.yml**) can be up using `docker-compose up`
-	* check if grid is up: `http://localhost:4444/ui/index.html#/`
+	* check if grid is up: `http://localhost:4444/ui/`
 	* currently there is three Chrome browser node, ie three virtual machine with Chrome browser
 	* During the grid execution we can see what's happening on each node, For that we can use second port mentioned in the `docker-compose.yml` node section eg: `http://localhost:7901/` for chrome(**Password: secret**)
 * Rerun failed cases: Add `rerun:target/failedrerun.txt` in the plugin section.

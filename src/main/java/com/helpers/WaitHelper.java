@@ -1,5 +1,8 @@
-package com.utils;
+package com.helpers;
 
+import com.enums.WaitStrategy;
+import com.utils.TestContext;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,10 +19,8 @@ import java.util.function.Function;
  */
 public class WaitHelper {
 
-    static Long defaultwait = Long.valueOf(20000);
-
     public static void untilJqueryIsDone(WebDriver driver) {
-        untilJqueryIsDone(driver, defaultwait);
+        untilJqueryIsDone(driver, TestContext.configUtil.getImplicitWait());
     }
 
     public static void untilJqueryIsDone(WebDriver driver, Long timeoutInSeconds) {
@@ -32,7 +33,7 @@ public class WaitHelper {
     }
 
     public static void untilPageLoadComplete(WebDriver driver) {
-        untilPageLoadComplete(driver, defaultwait);
+        untilPageLoadComplete(driver, TestContext.configUtil.getImplicitWait());
     }
 
     public static void untilPageLoadComplete(WebDriver driver, Long timeoutInSeconds) {
@@ -45,7 +46,7 @@ public class WaitHelper {
     }
 
     public static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition) {
-        until(driver, waitCondition, defaultwait);
+        until(driver, waitCondition, TestContext.configUtil.getImplicitWait());
     }
 
     private static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds) {
@@ -82,6 +83,26 @@ public class WaitHelper {
 
     public void pageLoadTimeOut(WebDriver driver, Long timeoutInSeconds) {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(timeoutInSeconds));
+    }
+
+    public static WebElement performExplicitWait(WebDriver driver, WaitStrategy waitstrategy, By by) {
+        WebElement element = null;
+        if(waitstrategy == WaitStrategy.CLICKABLE) {
+            element = 	new WebDriverWait(driver, Duration.ofSeconds(TestContext.configUtil.getExplicitWait()))
+                    .until(ExpectedConditions.elementToBeClickable(by));
+        }
+        else if(waitstrategy == WaitStrategy.PRESENCE) {
+            element =	new WebDriverWait(driver, Duration.ofSeconds(TestContext.configUtil.getExplicitWait()))
+                    .until(ExpectedConditions.presenceOfElementLocated(by));
+        }
+        else if(waitstrategy == WaitStrategy.VISIBLE) {
+            element =new WebDriverWait(driver, Duration.ofSeconds(TestContext.configUtil.getExplicitWait()))
+                    .until(ExpectedConditions.visibilityOfElementLocated(by));
+        }
+        else if(waitstrategy == WaitStrategy.NONE) {
+            element = driver.findElement(by);
+        }
+        return element;
     }
 
 }

@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources("file:./src/main/resources/Config.properties")
 public interface ConfigUtil extends Config {
 
-    @Key("baseURL")
+    @Key("BaseURL")
     String getBaseURL();
 
     @Key("Username")
@@ -17,17 +17,20 @@ public interface ConfigUtil extends Config {
     @Key("Password")
     String getPassword();
 
-    @Key("browser")
+    @Key("Browser")
     String getBrowser();
 
-    @Key("chromeVersion")
+    @Key("ChromeVersion")
     String getChromeVersion();
 
     @Key("EnvironmentName")
     String getEnvironmentName();
 
-    @Key("ImplicitlyWait")
-    String getImplicitlyWait();
+    @Key("ImplicitWait")
+    long getImplicitWait();
+
+    @Key("ExplicitWait")
+    long getExplicitWait();
 
     @Key("selenium.grid.url")
     String getSeleniumGridUrl();

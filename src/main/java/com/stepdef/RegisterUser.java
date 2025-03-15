@@ -1,7 +1,7 @@
 package com.stepdef;
 
 import com.google.inject.Inject;
-import com.utils.TestDataFactory;
+import com.factories.TestDataFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;

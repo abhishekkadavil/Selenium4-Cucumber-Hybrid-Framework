@@ -3,7 +3,7 @@ package com.stepdef;
 import com.google.inject.Inject;
 import com.testdatamodels.Item;
 import com.utils.ScenarioContext;
-import com.utils.TestDataFactory;
+import com.factories.TestDataFactory;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 

@@ -2,6 +2,7 @@ package com.stepdef;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.factories.ReporterFactory;
 import com.google.inject.Inject;
 import com.runners.RunnerHelper;
 import com.utils.*;

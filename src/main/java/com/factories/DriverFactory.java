@@ -1,5 +1,6 @@
-package com.utils;
+package com.factories;
 
+import com.utils.TestContext;
 import io.cucumber.guice.ScenarioScoped;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
@@ -31,9 +32,10 @@ public class DriverFactory {
         Logger.getLogger("org.openqa.selenium").setLevel(Level.SEVERE);
 
         if (browser.equalsIgnoreCase("chrome")) {
-            //Suppress chrome driver logs
+            // Suppress chrome driver logs
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
+            // Add ChromeOptions
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--incognito");
 
@@ -47,16 +49,14 @@ public class DriverFactory {
             } else if (execType.equalsIgnoreCase("grid")) {
 
                 try {
-                    driver = (execType.equalsIgnoreCase("grid")) ?
-                            (new RemoteWebDriver(new URL(TestContext.configUtil.getSeleniumGridUrl()), chromeOptions)) :
-                            (new ChromeDriver());
+                    driver = new RemoteWebDriver(new URL(TestContext.configUtil.getSeleniumGridUrl()), chromeOptions);
                 } catch (MalformedURLException e) {
                     log.error(e.toString());
                     Assert.fail("MalformedURLException thrown, Grid URL is not correct");
                 }
 
             } else {
-                log.info("************************ execType not recognised ************************");
+                log.info("************************ execType/EnvironmentName not recognised ************************");
             }
 
         } else if (browser.equalsIgnoreCase("firefox")) {

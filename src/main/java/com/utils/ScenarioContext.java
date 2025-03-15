@@ -1,5 +1,6 @@
 package com.utils;
 
+import com.factories.DriverFactory;
 import com.google.inject.Inject;
 import io.cucumber.guice.ScenarioScoped;
 import lombok.Data;

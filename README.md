@@ -90,7 +90,7 @@ Test report high level(suit level) configured will be done through `@BeforeClass
 Each common scenario operations like opening and closing Chrome browser, starting and closing test scenario, Adding screenshots for passed test etc. are done through Cucumber hooks present in the com.stepDef.Hooks class. We are using `@Before` and `@After` hooks of cucumber to achieve this.
 
 **Step level configuration:**
-For test step status management are using listener class named `com.utils.TestListener` which implements cucumber plugin `ConcurrentEventListener`. Using this plugin we are managing the status of the test cases by monitoring test steps. We are handling three main status **FAILED, PASSED, SKIPPED**.
+For test step status management are using listener class named `com.listeners.TestListener` which implements cucumber plugin `ConcurrentEventListener`. Using this plugin we are managing the status of the test cases by monitoring test steps. We are handling three main status **FAILED, PASSED, SKIPPED**.
 
 ## Scenario context
 All the operations which are common in scenario level like **driver management, data passing between test step** are 
@@ -141,9 +141,12 @@ We are using `slf4j` to implement `log4j` through `lombok`
   * Increase the test readability
   * Easy to maintain
   * Easy to update or add tests (rather than use code to create/update test case we can reuse the steps to create/update test cases)
+* Design Principle
+  * KISS
 * Design pattern used
 	* Added factory design pattern in the framework - selecting the browser mechanism
 	* DI injection in Test context
+    * Singleton pattern
 * No need to put the locators in exec or properties file because it's not efficient, if we implement such ecosystem we have to create and maintain separate files and related class to maintain that ecosystem which is an overkill
 * Why not use grass hopper extend report plugin - it's not support cucumber 7, It's not that much flexible as I wanted
 * Why use Google guice instead of pico container or spring

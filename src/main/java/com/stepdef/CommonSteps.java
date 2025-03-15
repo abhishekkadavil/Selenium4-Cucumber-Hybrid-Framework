@@ -4,7 +4,7 @@ import com.dataproviders.JsonDataReader;
 import com.google.inject.Inject;
 import com.utils.ScenarioContext;
 import com.utils.TestContext;
-import com.utils.TestDataFactory;
+import com.factories.TestDataFactory;
 import io.cucumber.java.en.Given;
 
 /**

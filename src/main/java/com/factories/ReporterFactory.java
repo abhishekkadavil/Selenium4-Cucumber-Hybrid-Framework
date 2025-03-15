@@ -1,4 +1,4 @@
-package com.utils;
+package com.factories;
 
 import com.aventstack.extentreports.ExtentTest;
 

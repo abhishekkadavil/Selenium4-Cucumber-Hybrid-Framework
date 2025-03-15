@@ -14,7 +14,7 @@ import org.testng.annotations.DataProvider;
         monochrome = true,
         dryRun = false,
         glue = "com.stepDef",
-        plugin = {"com.utils.TestListener",
+        plugin = {"com.listeners.TestListener",
                 "rerun:target/failedrerun.txt"
         })
 public class FailedTcRunner extends AbstractTestNGCucumberTests {

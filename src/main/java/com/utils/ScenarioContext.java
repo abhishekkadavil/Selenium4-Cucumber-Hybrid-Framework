@@ -25,7 +25,7 @@ public class ScenarioContext {
 
     public void invokeDriver() {
         String browser = (System.getProperty("browser") == null) ? TestContext.configUtil.getBrowser() : System.getProperty("browser");
-        String execType = (System.getProperty("execType") == null) ? "local" : System.getProperty("execType");
+        String execType = (System.getProperty("execType") == null) ? TestContext.configUtil.getEnvironmentName() : System.getProperty("execType");
         String chromeVersion = (System.getProperty("chromeVersion") == null) ? TestContext.configUtil.getChromeVersion() : System.getProperty("chromeVersion");
         this.driver = driverFactory.getDriver(browser, execType, chromeVersion);
         this.driver.manage().window().maximize();

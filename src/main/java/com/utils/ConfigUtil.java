@@ -11,12 +11,6 @@ public interface ConfigUtil extends Config {
     @Key("BaseURL")
     String getBaseURL();
 
-    @Key("Username")
-    String getUsername();
-
-    @Key("Password")
-    String getPassword();
-
     @Key("Browser")
     String getBrowser();
 

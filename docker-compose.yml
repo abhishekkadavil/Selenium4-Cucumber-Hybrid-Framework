@@ -77,19 +77,65 @@ services:
       - "6905:5900"
       - "7905:7900"
 
-  opera:
-    image: selenium/node-opera
+  chrome_video1:
+    image: selenium/video
     volumes:
-      - /dev/shm:/dev/shm
+      - ./TestRecordings:/videos
     depends_on:
-      - selenium-hub
+      - chrome-node-1
     environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    ports:
-      - "6906:5900"
-      - "7906:7900"
+      - DISPLAY_CONTAINER_NAME=chrome-node-1
+      - SE_NODE_GRID_URL=http://selenium-hub:4444
+#      - FILE_NAME=chrome_video1.mp4
+      - SE_VIDEO_FILE_NAME=auto
+
+  chrome_video2:
+    image: selenium/video
+    volumes:
+      - ./TestRecordings:/videos
+    depends_on:
+      - chrome-node-2
+    environment:
+      - DISPLAY_CONTAINER_NAME=chrome-node-2
+      - SE_NODE_GRID_URL=http://selenium-hub:4444
+#            - FILE_NAME=chrome_video2.mp4
+      - SE_VIDEO_FILE_NAME=auto
+
+  chrome_video3:
+    image: selenium/video
+    volumes:
+      - ./TestRecordings:/videos
+    depends_on:
+      - chrome-node-3
+    environment:
+      - DISPLAY_CONTAINER_NAME=chrome-node-3
+      - SE_NODE_GRID_URL=http://selenium-hub:4444
+#            - FILE_NAME=chrome_video3.mp4
+      - SE_VIDEO_FILE_NAME=auto
+
+  edge_video:
+    image: selenium/video
+    volumes:
+      - ./TestRecordings:/videos
+    depends_on:
+      - edge
+    environment:
+      - DISPLAY_CONTAINER_NAME=edge
+      - SE_NODE_GRID_URL=http://selenium-hub:4444
+#            - FILE_NAME=edge_video.mp4
+      - SE_VIDEO_FILE_NAME=auto
+
+  firefox_video:
+    image: selenium/video
+    volumes:
+      - ./TestRecordings:/videos
+    depends_on:
+      - firefox
+    environment:
+      - DISPLAY_CONTAINER_NAME=firefox
+      - SE_NODE_GRID_URL=http://selenium-hub:4444
+#            - FILE_NAME=firefox_video.mp4
+      - SE_VIDEO_FILE_NAME=auto
 
   #  appium:
   #    privileged: true

@@ -60,9 +60,25 @@ public class DriverFactory {
             }
 
         } else if (browser.equalsIgnoreCase("firefox")) {
-            FirefoxOptions foptions = new FirefoxOptions();
-            foptions.addArguments("-private");
-            driver = new FirefoxDriver(foptions);
+
+            // Add FirefoxOptions
+            FirefoxOptions fireFoxOptions = new FirefoxOptions();
+            fireFoxOptions.addArguments("-private");
+
+            if (execType.equalsIgnoreCase("local")) {
+                driver = new FirefoxDriver(fireFoxOptions);
+            } else if (execType.equalsIgnoreCase("grid")) {
+
+                try {
+                    driver = new RemoteWebDriver(new URL(TestContext.configUtil.getSeleniumGridUrl()), fireFoxOptions);
+                } catch (MalformedURLException e) {
+                    log.error(e.toString());
+                    Assert.fail("MalformedURLException thrown, Grid URL is not correct");
+                }
+
+            } else {
+                log.info("************************ execType/EnvironmentName not recognised ************************");
+            }
         }
 
         return driver;

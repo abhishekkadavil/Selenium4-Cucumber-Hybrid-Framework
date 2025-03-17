@@ -25,6 +25,7 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 * Retry flaky test cases(Not implemented in TestNG.xml execution, same can be implemented using annotation transformer of TestNG) - `MaxFlakyTestRetryCount` and `FlakyTestRetryFlag` in [Config.properties](src/main/resources/Config.properties)
 * We can control if the test need to continue execution, if the certain number of test is failed. eg: `@PassTestNoExecutionControl`
   * If we have total of 10 tests, and we need to skip the test after failing first 5 test, We can use this by defining PassTestExecutionControlNumFlag and PassTestExecutionControlNum in config property file
+* Selenium-Grid execution videos recordings can be reviewed later [Go to Permissions](#Permissions)
 
 ## Prerequisite
 
@@ -38,6 +39,16 @@ https://github.com/abhishekkadavil/nopCommerce#how-to-run
 * Maven
 * TestNG
 * SonarQube(Former SonarLint)
+
+#### Permissions
+* Selenium-Grid video recordings - If your using Ubuntu, The recordings might be with limited permission, hence cannot be played. We can play the recordings by executing below commands
+	* Create folder if it's not already exist
+		* mkdir -p ./TestRecordings
+	* Give permission to [TestRecordings](TestRecordings)
+		* sudo chown -R $USER:$USER ./TestRecordings
+		* sudo chmod -R 777 ./TestRecordings
+	* ive permission to files inside [TestRecordings](TestRecordings)
+		* sudo chown -R $USER:$USER ./*
 
 ## Test Execution
 

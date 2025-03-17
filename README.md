@@ -26,6 +26,7 @@ healenium setup: https://github.com/healenium/healenium-example-maven
 * We can control if the test need to continue execution, if the certain number of test is failed. eg: `@PassTestNoExecutionControl`
   * If we have total of 10 tests, and we need to skip the test after failing first 5 test, We can use this by defining PassTestExecutionControlNumFlag and PassTestExecutionControlNum in config property file
 * Selenium-Grid execution videos recordings can be reviewed later [Go to Permissions](#Permissions)
+* We can dockerise the framework if needed by referring [Dockerfile](Dockerfile)
 
 ## Prerequisite
 

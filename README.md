@@ -172,6 +172,8 @@ We are using `slf4j` to implement `log4j` through `lombok`
   java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. if log4j have any vulnerability issue we can use logback or java.util.logging. Since this is an interface we can easily unplug and plug the frameworks
 * Only used explicit wait, adding implicit and explicit wait in same framework the selenium work in unexpected way - mentioned in the documentation, so removed it.
 * Did not used page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
+* Since [InteractionHelper.java](src/main/java/com/stepdef/InteractionHelper.java) does not share any state(no static variable present in the class so state will not be shared, local variable will not share state) why don't we make the class static. 
+  * It is possible to make it static in theory but, I don't like to make the functions tightly coupled hence not done that. No other particular issue with that approach.
 
 ## Feature need to add
 * Dockerized the framework

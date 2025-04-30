@@ -127,58 +127,57 @@ We are using `slf4j` to implement `log4j` through `lombok`
 
 ## Other Features
 * Added Same test case with multiple types of data - Scenario outline mode
-* Added testng file so that we can control the thread count in parallel mode
-* In the current framework we have optimised the page management by combining POM with step def files, By doing so it is easily manageable, also creating new test case require only small effort.
-* Added `google-juice` and `cucumber-juice` for managing the state of driver object, class object etc
+* Added TestNG file so that we can control the thread count in parallel mode
+* In the current framework, we have optimised the page management by combining POM with step def files. By doing so, it is easily manageable, also creating new test cases requires only a small effort.
+* Added `google-juice` and `cucumber-juice` for managing the state of driver object, class object, etc
 * Added the `@ScenarioScoped`(the object of a class marked this annotation is only created for one scenario and destroyed after the use)
-	* Added functionality of ScenarioContext to accommodate all the common function in a scenario perspective eg: initialising and quitting a browser driver
-	* Made the BrowserFactory to `@ScenarioScoped` since we want to support parallel testing each scenario needed new instance of driver
+	* Added functionality of ScenarioContext to accommodate all the common functions in a scenario perspective, eg, initialising and quitting a browser driver
+	* Made the BrowserFactory to `@ScenarioScoped` since we want to support parallel testing, each scenario needed a new instance of the  driver
 * Added `InteractionHelper` class so less code in step def classes
-* Most of the exceptions are also handling in `InteractionHelper` class
+* Most of the exceptions are also handled in the `InteractionHelper` class
 * Added `preserve-order="true"` in `testng.xml` to maintain order in the execution
-* Modal class implemented with lombok
+* Modal class implemented with Lombok
 * Added `ActionHelper` class
 * Added `WaitHelper` class
-* Suppressed chrome driver and selenium warning message
-* Added gitignore file to ignore unnecessary file tracking
-* Controllable browser with respect to scenario - 
+* Suppressed Chrome driver and Selenium warning message
+* Added a gitignore file to ignore unnecessary file tracking
+* Controllable browser with respect to the scenario - 
 * Retry flaky test cases
 
 ## Why and Why Not
 * OOPS, used in framework
 	* `Runnerhelper` class
-* Why cucumber-TestNG? Why not Cucumber, TestNG, JUnit etc.
-  * I implemented Cucumber-TestNG so that we can use both TestNG and cucumber feature 
+* Why cucumber-TestNG? Why not Cucumber, TestNG, JUnit, etc?
+  * I implemented Cucumber-TestNG so that we can use both TestNG and Cucumber features 
     * Used IRetryAnalyzer for retrying flaky tests
     * Used annotations like @BeforeClass, @AfterClass, @DataProvider, @Test etc
   * Increase the test readability
   * Easy to maintain
-  * Easy to update or add tests (rather than use code to create/update test case we can reuse the steps to create/update test cases)
+  * Easy to update or add tests (rather than using code to create/update a test case, we can reuse the steps to create/update test cases)
 * Design Principle
   * KISS
 * Design pattern used
 	* Added factory design pattern in the framework - selecting the browser mechanism
 	* DI injection in Test context
     * Singleton pattern
-* No need to put the locators in exec or properties file because it's not efficient, if we implement such ecosystem we have to create and maintain separate files and related class to maintain that ecosystem which is an overkill
-* Why not use grass hopper extend report plugin - it's not support cucumber 7, It's not that much flexible as I wanted
-* Why use Google guice instead of pico container or spring
+* No need to put the locators in the exec or properties file because it's not efficient. If we implement such an ecosystem, we have to create and maintain separate files and related classes to maintain that ecosystem, which is an overkill
+* Why not use the grass hopper extend report plugin - it doesn't support cucumber 7, it's not as flexible as I wanted
+* Why use Google Guice instead of Pico Container or Spring
 	* google guice - can do DI(object creation) with annotations and have `@ScenarioScoped` annotation which will make the state management easy
 	* pico container - Do not have `@ScenarioScoped` annotation
 	* spring - this is complex
-* Why not Cucumber+JUnit - cucumber junit will not allow us to execute scenarios in parallel only feature files in parallel, but TestNG can.
-* Why not use thread local concept to manage driver? - found google juice so went with that method because it's easy to implement. we can manage state using DI(`@Inject`) and `@ScenarioScoped` annotations
-* For logging SlF4j is used because it serves as a simple facade or abstraction for various logging frameworks (e.g. 
-  java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. if log4j have any vulnerability issue we can use logback or java.util.logging. Since this is an interface we can easily unplug and plug the frameworks
-* Only used explicit wait, adding implicit and explicit wait in same framework the selenium work in unexpected way - mentioned in the documentation, so removed it.
-* Did not used page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
-* Since [InteractionHelper.java](src/main/java/com/stepdef/InteractionHelper.java) does not share any state(no static variable present in the class so state will not be shared, local variable will not share state) why don't we make the class static. 
-  * It is possible to make it static in theory but, I don't like to make the functions tightly coupled hence not done that. No other particular issue with that approach.
+* Why not Cucumber+JUnit - Cucumber+JUnit will not allow us to execute scenarios in parallel, only feature files in parallel, but TestNG can.
+* Why not use the thread-local concept to manage the driver? - Found Google juice, so went with that method because it's easy to implement. we can manage state using DI(`@Inject`) and `@ScenarioScoped` annotations
+* For logging, SLF4j is used because it serves as a simple facade or abstraction for various logging frameworks (e.g. 
+  java.util.logging, logback, log4j), allowing the end user to plug in the desired logging framework at deployment time. If log4j has any vulnerability issue, we can use logback or java.util.logging. Since this is an interface, we can easily unplug and plug the frameworks
+* Only used explicit wait, adding implicit and explicit wait in the same framework, the selenium works in unexpected way - mentioned in the documentation, so removed it.
+* Did not use page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
+* Since [InteractionHelper.java](src/main/java/com/stepdef/InteractionHelper.java) does not share any state(no static or class variable present in the class, so state will not be shared, local variables will not share state), that is why we didn't make the class static. In the future, if there are any class-level variables that needed to be declared, then the suit will have unexpected behaviors. Also, I don't like to make the functions tightly coupled, hence not done that.
 
-## Feature need to add
+## Feature needs to be added
 * Dockerized the framework
 	* https://codefresh.io/blog/not-ignore-dockerignore-2/
-* DB Connection should be in singleton pattern
+* DB Connection should be in a singleton pattern
 * Need to run test case from feature file instead of test runner file
 * Integrate with slack - https://www.youtube.com/watch?v=BsLFhe_1By8&list=PLNky9jSTCKG3j0WwqMDFOrr3XMlaSsKOY&index=12
 * Need to add souce labs 

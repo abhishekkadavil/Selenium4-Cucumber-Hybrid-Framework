@@ -180,6 +180,7 @@ We are using `slf4j` to implement `log4j` through `lombok`
 ## Other references
 * Self-healing selenium - healenium setup: https://github.com/healenium/healenium-example-maven
 * Test data managed with thread local and POJO - https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/tree/pojo-testdata
+* Included extended report - https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/tree/with-extent-reports
 
 ## Feature needs to be added
 * Dockerized the framework

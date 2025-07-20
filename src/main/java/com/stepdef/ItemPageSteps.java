@@ -1,9 +1,9 @@
 package com.stepdef;
 
+import com.dataproviders.TestDataReader;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
-import com.testdatamodels.Item;
 import com.utils.ScenarioContext;
-import com.factories.TestDataFactory;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
@@ -16,6 +16,8 @@ public class ItemPageSteps {
     InteractionHelper interactionHelper;
     @Inject
     ScenarioContext scenarioContext;
+    @Inject
+    TestDataReader testDataReader;
 
     private By item_quantity_txtbx = By.xpath("//input[@aria-label='Enter a quantity']");
     private By add_to_cart_btn = By.xpath("//button[@class='button-1 add-to-cart-button']");
@@ -23,13 +25,18 @@ public class ItemPageSteps {
     @When("add item to cart")
     public void add_item_to_cart() {
 
-        for (Item item : TestDataFactory.getInstance().getTestDataModel().getItems()) {
+        JsonNode itemsNode = testDataReader.getItems();
+        if (itemsNode != null && itemsNode.isArray()) {
+            for (JsonNode item : itemsNode) {
+                String url = item.get("url").asText();
+                String size = item.get("size").asText();
+                String quantity = item.get("quantity").asText();
 
-            //navigate to each item through url
-            scenarioContext.getDriver().navigate().to(item.getUrl());
-
-            interactionHelper.typeElement(item_quantity_txtbx, item.getQuantity());
-            interactionHelper.clickElement(add_to_cart_btn);
+                // Use the values
+                scenarioContext.getDriver().navigate().to(url);
+                interactionHelper.typeElement(item_quantity_txtbx, quantity);
+                interactionHelper.clickElement(add_to_cart_btn);
+            }
         }
 
     }

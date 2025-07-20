@@ -1,7 +1,7 @@
 package com.stepdef;
 
+import com.dataproviders.TestDataReader;
 import com.google.inject.Inject;
-import com.factories.TestDataFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -15,6 +15,9 @@ public class LoginPageSteps {
     @Inject
     InteractionHelper interactionHelper;
 
+    @Inject
+    TestDataReader testDataReader;
+
     private By username_txtbx = By.xpath("//input[@id='Email']");
     private By password_txtbx = By.xpath("//input[@id='Password']");
     private By login_btn = By.xpath("//button[text()='Log in']");
@@ -24,8 +27,8 @@ public class LoginPageSteps {
     @When("login using the credentials")
     public void loginUsingTheCredentials() {
 
-        interactionHelper.typeElement(username_txtbx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getUsername());
-        interactionHelper.typeElement(password_txtbx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
+        interactionHelper.typeElement(username_txtbx, testDataReader.getUsername());
+        interactionHelper.typeElement(password_txtbx, testDataReader.getPassword());
         interactionHelper.clickElement(login_btn);
     }
 

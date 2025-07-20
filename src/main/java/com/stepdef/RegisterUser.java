@@ -1,7 +1,7 @@
 package com.stepdef;
 
+import com.dataproviders.TestDataReader;
 import com.google.inject.Inject;
-import com.factories.TestDataFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -14,6 +14,9 @@ public class RegisterUser {
 
     @Inject
     InteractionHelper interactionHelper;
+
+    @Inject
+    TestDataReader testDataReader;
 
     private By register_btn = By.xpath("//a[text()='Register']");
     private By gender_btn = By.xpath("//input[@id='gender-male']");
@@ -40,7 +43,7 @@ public class RegisterUser {
         interactionHelper.clickElement(gender_btn);
         interactionHelper.typeElement(first_name_txtBx, "Jhone");
         interactionHelper.typeElement(last_name_txtBx, "Kadavil");
-        interactionHelper.typeElement(email_txtBx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getUsername());
+        interactionHelper.typeElement(email_txtBx, testDataReader.getUsername());
     }
 
     @And("add company details")
@@ -54,9 +57,8 @@ public class RegisterUser {
 
     @And("add password")
     public void add_password() {
-        interactionHelper.typeElement(password_txtBx,
-                TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
-        interactionHelper.typeElement(confirmPassword_txtBx, TestDataFactory.getInstance().getTestDataModel().getLoginCredential().getPassword());
+        interactionHelper.typeElement(password_txtBx, testDataReader.getPassword());
+        interactionHelper.typeElement(confirmPassword_txtBx, testDataReader.getPassword());
     }
 
     @And("user should be able register successfully")

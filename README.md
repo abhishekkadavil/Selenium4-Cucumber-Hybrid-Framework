@@ -82,7 +82,7 @@ In any point the execution in framework is start from `runners.TestRunner.java` 
 **RunnerHelper** class will be shared among `runners.TestRunner` and `runners.FailedTCRunner` class to implement code re-usability.
 
 ## Test case creation
-Test cases are defined in the Features folder in the form of `.feature` file. The first step in the feature file is used to provide the test data used in the test case. Once we get the appropriate test data we can continue rest of the test step. The testdata fields in the json file should same as the fields present in the model class.
+Test cases are defined in the Features folder in the form of `.feature` file. The first step in the feature file is used to provide the test data used in the test case. Once we get the appropriate test data we can continue rest of the test step. 
 
 **Test steps(com.stepDef)**
 * This package contain all the step defined in the feature file like
@@ -90,9 +90,7 @@ Test cases are defined in the Features folder in the form of `.feature` file. Th
 	* Do the functionality like login, create order etc
 
 ## Read Test Data
-Test data reading start from test data path provided in step defined in the feature file. Test data is provided in JSON file in `TestData/{feature name}/{test case01}` path. We are using `JsonDataReader` class to read the data. This read data is set to the `testDataModels.TestDataModel` using the `TestDataFactory`. Since we want to support the parallel execution hence we are using factory method and thread-local class to create TestDataModel per test case using TestDataFactory. In this way each scenario will have its own TestData and will be executed in separate thread. Instead of thread local concept we can also use `@ScenarioScoped` but here we are not using it, Not any particular reason to ignore it, but I want the framework to include all the knowledge I learn from open source community.
-
-We only need to provide necessary fields that need the test to execute eg: `TestData/Login/Scenario01.json` vs `TestData/FirstTimeOrder/Scenario01.json`
+Test data reading start from test data path provided in step defined in the feature file. Test data is provided in JSON file in `TestData/{feature name}/{test case01}` path. We are using `TestDataReader` class to read the data. We are not specifying any POJO since we don't want to stick to any specific JSON structure. The parallel execution is supported through `@ScenarioScoped`. In this way each scenario will have its own test data and will be executed in separate thread. We can implement the same though thread local concept as well. we are using `@ScenarioScoped` since its very easy and clean to implement and manage the state of the test data.
 
 ## Test reporting:
 

@@ -1,7 +1,7 @@
 package com.stepdef;
 
+import com.dataproviders.TestDataReader;
 import com.google.inject.Inject;
-import com.factories.TestDataFactory;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
@@ -11,6 +11,9 @@ import org.openqa.selenium.By;
 public class PaymentMethodPageSteps {
     @Inject
     InteractionHelper interactionHelper;
+
+    @Inject
+    TestDataReader testDataReader;
 
     private By paymentMethod_check_btn = By.xpath("//input[@id='paymentmethod_0']");
     private By paymentMethod_save_btn = By.xpath("//div[@id='payment-method-buttons-container']/button[@name='save']");
@@ -25,7 +28,7 @@ public class PaymentMethodPageSteps {
     @When("select payment method")
     public void select_payment_method() {
 
-        String paymentType = TestDataFactory.getInstance().getTestDataModel().getPayment().getPmtType();
+        String paymentType = testDataReader.getPaymentType();
 
         if (paymentType.equalsIgnoreCase("Check")) {
             interactionHelper.clickElement(paymentMethod_check_btn);

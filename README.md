@@ -90,7 +90,11 @@ Test cases are defined in the Features folder in the form of `.feature` file. Th
 	* Do the functionality like login, create order etc
 
 ## Read Test Data
-Test data reading start from test data path provided in step defined in the feature file. Test data is provided in JSON file in `TestData/{feature name}/{test case01}` path. We are using `TestDataReader` class to read the data. We are not specifying any POJO since we don't want to stick to any specific JSON structure. The parallel execution is supported through `@ScenarioScoped`. In this way each scenario will have its own test data and will be executed in separate thread. We can implement the same though thread local concept as well. we are using `@ScenarioScoped` since its very easy and clean to implement and manage the state of the test data.
+Test data reading start from test data path provided in step defined in the feature file. Test data is provided in JSON file in `TestData/{feature name}/{test case01}` path. We are using `TestDataReader` class to read the data. We are not specifying any POJO since we don't want to stick to any specific JSON structure. The parallel execution is supported through `@ScenarioScoped`. In this way each scenario will have its own test data and will be executed in separate thread. We can implement the same though thread local concept as well. we are using `@ScenarioScoped` since its very easy and clean to implement and manage the state of the test data.  
+  
+* We can hard code path to extract value like `com.dataproviders.TestDataReader.getUsername`.
+* In case of array we can get it like `com.dataproviders.TestDataReader.getItems`
+* If you want to extract data from root node you can use `com.dataproviders.TestDataReader.getRootNode`
 
 ## Test reporting:
 

@@ -95,6 +95,7 @@ Test data reading start from test data path provided in step defined in the feat
 * We can hard code path to extract value like `com.dataproviders.TestDataReader.getUsername`.
 * In case of array we can get it like `com.dataproviders.TestDataReader.getItems`
 * If you want to extract data from root node you can use `com.dataproviders.TestDataReader.getRootNode`
+* Test data managed with thread local and POJO - https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/tree/pojo-testdata
 
 ## Test reporting:
 

@@ -177,6 +177,10 @@ We are using `slf4j` to implement `log4j` through `lombok`
 * Did not use page factory here is why - https://www.youtube.com/watch?v=e1esWQ_nZPE&list=PL9ok7C7Yn9A_JZFMrhrgEwfqQGiuyvSkB&index=13
 * Since [InteractionHelper.java](src/main/java/com/stepdef/InteractionHelper.java) does not share any state(no static or class variable present in the class, so state will not be shared, local variables will not share state), that is why we didn't make the class static. In the future, if there are any class-level variables that needed to be declared, then the suit will have unexpected behaviors. Also, I don't like to make the functions tightly coupled, hence not done that.
 
+## Other references
+* Self-healing selenium - healenium setup: https://github.com/healenium/healenium-example-maven
+* Test data managed with thread local and POJO - https://github.com/abhishekkadavil/Selenium4-Cucumber-Hybrid-Framework/tree/pojo-testdata
+
 ## Feature needs to be added
 * Dockerized the framework
 	* https://codefresh.io/blog/not-ignore-dockerignore-2/

@@ -25,14 +25,4 @@ public class FailedTcRunner extends AbstractTestNGCucumberTests {
         return super.scenarios();
     }
 
-    @BeforeClass
-    public void beforeClass() {
-        RunnerHelper.beforeTestSuit();
-    }
-
-    @AfterClass
-    public void afterClass() {
-        RunnerHelper.afterTestSuit();
-    }
-
 }

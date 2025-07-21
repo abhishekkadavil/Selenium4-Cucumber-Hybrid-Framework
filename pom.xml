@@ -59,8 +59,8 @@
 		<!-- using for reporting -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>5.0.6</version>
+			<artifactId>chaintest-cucumber-jvm</artifactId>
+			<version>1.0.12</version>
 		</dependency>
 
 		<!-- using for avoid setters ang getters -->

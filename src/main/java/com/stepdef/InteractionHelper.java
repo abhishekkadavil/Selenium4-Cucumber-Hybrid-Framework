@@ -231,4 +231,31 @@ public class InteractionHelper {
         }
         return base64;
     }
+
+    public byte[] takeScreenShotOfElementByteArray(By by) {
+
+        byte[] imageBytes = new byte[0];
+        File srcfile = scenarioContext.getDriver().findElement(by).getScreenshotAs(OutputType.FILE);
+        try {
+            InputStream in = new FileInputStream(srcfile);
+            imageBytes = in.readAllBytes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imageBytes;
+    }
+
+    public byte[] takeScreenShotOfWebPageByteArray() {
+
+        log.info("takeScreenShotOfWebPage");
+        byte[] imageBytes = new byte[0];
+        File srcfile = ((TakesScreenshot) scenarioContext.getDriver()).getScreenshotAs(OutputType.FILE);
+        try {
+            InputStream in = new FileInputStream(srcfile);
+            imageBytes = in.readAllBytes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imageBytes;
+    }
 }

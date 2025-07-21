@@ -1,5 +1,6 @@
 package com.runners;
 
+import com.aventstack.chaintest.service.ChainPluginService;
 import com.listeners.RetryListener;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -10,12 +11,12 @@ import org.testng.annotations.*;
 /**
  * @author Abhishek Kadavil
  */
-@CucumberOptions(tags = "@Login",
+@CucumberOptions(tags = "@Login_Scenario1",
         features = "Features",
         monochrome = true,
         dryRun = false,
         glue = "com.stepdef",
-        plugin = {"com.listeners.TestListener",
+        plugin = {"com.aventstack.chaintest.plugins.ChainTestCucumberListener:",
                 "rerun:target/failedrerun.txt"
         })
 public class TestRunner extends AbstractTestNGCucumberTests {
@@ -45,12 +46,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
     @BeforeClass
     public void beforeClass() {
-        RunnerHelper.beforeTestSuit();
-    }
-
-    @AfterClass
-    public void afterClass() {
-        RunnerHelper.afterTestSuit();
+        ChainPluginService.getInstance().addSystemInfo("Tester", "Abhishek Kadavil");
     }
 
 }

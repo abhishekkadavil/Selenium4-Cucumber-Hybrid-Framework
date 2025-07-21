@@ -99,6 +99,13 @@ Test data reading start from test data path provided in step defined in the feat
 
 ## Test reporting:
 
+Repo: https://github.com/anshooarora/chaintest
+Docker: https://github.com/anshooarora/chaintest/blob/main/chainlp/docker/docker-compose-postgres.yml
+Updated the original docker-compose to support ubuntu.
+execute `docker compose -f docker-compose-postgres.yml up` through [docker-compose-postgres.yml](chainLP/docker-compose-postgres.yml) in `/chainLP`
+The server will be available on http://localhost:8084/
+chaintest properties configured though [chaintest.properties](src/main/resources/chaintest.properties) file.
+
 **Suit level configuration:**
 Test report high level(suit level) configured will be done through `@BeforeClass` and `@AfterClass` annotations of TestNG inside TestRunner class. each scenario wise step will be added to report through `stepDef.Hooks`
 

@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10.5
+    container_name: postgres
+    environment:
+      POSTGRES_DB: chaintest
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpass
+    ports:
+      - "5434:5432"
+
+  chaintest:
+    image: anshooarora/chaintest:latest
+    container_name: chaintest
+    environment:
+      - SPRING_PROFILES_ACTIVE=postgres
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/chaintest
+      - SPRING_DATASOURCE_DRIVERCLASSNAME=org.postgresql.Driver
+      - SPRING_DATASOURCE_USERNAME=testuser
+      - SPRING_DATASOURCE_PASSWORD=testpass
+    depends_on:
+      - postgres
+    ports:
+      - "8084:80"
